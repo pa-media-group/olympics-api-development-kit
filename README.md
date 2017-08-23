@@ -1,5 +1,3 @@
-##Sport API
-
-#Development Kit
-
+# Olympics API
+## Development Kit
 Collection of Development Resources for Press Associations Olympics API
