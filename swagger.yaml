@@ -459,7 +459,7 @@ paths:
                 },
                 {
                   "rel": "event-standings",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
+                  "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/standings"
                 },
                 {
                   "rel": "event-brackets",
