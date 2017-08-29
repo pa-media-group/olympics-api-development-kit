@@ -1610,7 +1610,7 @@ paths:
         200:
           description: Medal Collection
           schema:
-            type: object
+            type: array
           examples:
             application/json: []  
 
