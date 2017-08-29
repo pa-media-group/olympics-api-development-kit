@@ -248,10 +248,6 @@ paths:
           in: query
           required: false
         - $ref: '#/parameters/code'
-          name: phase
-          in: query
-          required: false
-        - $ref: '#/parameters/code'
           name: organisation
           in: query
           required: false
@@ -332,15 +328,7 @@ paths:
                             {
                               "rel": "results",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/results"
-                            },
-                            {
-                              "rel": "phase-results",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/results"
-                            },
-                            {
-                              "rel": "phase-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/standings"
-                            },
+                            }
                             {
                               "rel": "event",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
@@ -440,14 +428,6 @@ paths:
                 {
                   "rel": "results",
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/results"
-                },
-                {
-                  "rel": "phase-results",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/results"
-                },
-                {
-                  "rel": "phase-standings",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/standings"
                 },
                 {
                   "rel": "event",
