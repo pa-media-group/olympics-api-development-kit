@@ -1470,3 +1470,68 @@ paths:
                           "competition": true
                       }
                     }
+
+parameters:
+
+  code:
+    name: code
+    in: path
+    description: Code of query entity
+    required: true
+    type: string
+
+  status:
+    name: status
+    in: query
+    description: The status of a unit
+    required: false
+    type: string
+
+  type:
+    name: type
+    in: query
+    description: The type of a unit
+    required: false
+    type: string
+
+  gender:
+    name: gender
+    in: query
+    description: The gender of a unit
+    required: false
+    type: string
+
+  limit:
+    name: limit
+    in: query
+    required: false
+    type: integer
+    format: int32
+    default: 100
+    x-example: 5
+    description: >-
+      Limit the the number of items to be returned per page.
+      The 'limit' parameter is typically used with the 'offset' parameter to facilitate pagination.
+
+  baseDate:
+    name: baseDate
+    in: query
+    required: false
+    type: string
+    format: 'date-time'
+    x-example: 2014-04-17
+    description: >-
+      Limit the entities to ones within the specified range.
+      The 'end' parameter is typically used in combination with the 'start' param to form a date range.
+
+      Formats Supported:
+        - 'YYYY-MM-DD'
+        - 'YYYY-MM-DD[T]HH:mm:ssZ'
+        - 'YYYY-MM-DD[T]HH:mm:ss.SSSZ'
+        - 'YYYY-MM-DD[T]HH:mm:ss'
+        - 'YYYY-MM-DD[T]HH:mm'
+        - 'now'
+        - 'today'
+        - 'tomorrow'
+        - 'now.plus.n'
+        - 'now.minus.n'
