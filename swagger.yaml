@@ -7,7 +7,14 @@ info:
 
 host: olympics.api.pressassociaton.io
 
+securityDefinitions:
+  apikey:
+    type: apiKey
+    name: apikey
+    in: header
+    
 schemes:
+  - https
   - http
   
 produces:
@@ -25,6 +32,8 @@ paths:
         - Games
       description: List all available games.
       operationId: listGames
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/limit'
       responses:
@@ -32,7 +41,8 @@ paths:
           description: Games Collection
           schema:
             type: array
-            example: {
+          examples:
+            application/json: {
                         total: 4,
                         items: [{
                             code: 'OWG2018',
@@ -60,6 +70,8 @@ paths:
         - Games
       description: Returns a game based on the games code.
       operationId: getGamesByCode
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -67,7 +79,9 @@ paths:
         200:
           description: Games Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                 code: 'OCOG2020',
                 description: 'Tokyo 2020 Olympic Games'
               }
@@ -82,6 +96,8 @@ paths:
         - Discipline
       description: Returns a list of disciplines for a games.
       operationId: listDisciplinesByGames
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -91,7 +107,8 @@ paths:
           description: Discipline Collection
           schema:
             type: array
-            example: {
+          examples:
+            application/json: {
                         total: 3,
                         items: [{
                             code: 'ALP',
@@ -114,6 +131,8 @@ paths:
         - Discipline
       description: Returns the detail of a discipline for a games.
       operationId: listDisciplinesByGames
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -123,7 +142,9 @@ paths:
         200:
           description: Discipline Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                 code: 'BOB',
                 description: 'Bobsleigh',
                 eventOrder: 'DATE',
@@ -151,6 +172,8 @@ paths:
         - Organisation
       description: Returns a list of countries for a games.
       operationId: listOrganisationByGames
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -159,7 +182,8 @@ paths:
           description: Organisation Collection
           schema:
             type: array
-            example: {
+          examples:
+            application/json: {
                         total: 2,
                         items: [{
                             code: 'GBR',
@@ -178,6 +202,8 @@ paths:
         - Organisation
       description: Returns the detail of a organisation for a games.
       operationId: listOrganityposationByGames
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -187,7 +213,9 @@ paths:
         200:
           description: Organisation Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
               code: 'GBR',
               description: 'Great Britain',
             }  
@@ -202,6 +230,8 @@ paths:
         - Unit
       description: Returns a list of units.
       operationId: listUnits
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -240,7 +270,8 @@ paths:
           description: Unit Collection, we need to add schedule helpers to look up by single day. Start list for head to head events needs adding.
           schema:
             type: array
-            example: {
+          examples:
+            application/json: {
                         total: 1,
                         items: [{
                           "code": "SBDMBA----------------------------",
@@ -336,6 +367,8 @@ paths:
         - Unit
       description: Returns the detail of a unit for a games.
       operationId: getUnitByCode
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -345,7 +378,9 @@ paths:
         200:
           description: Unit Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
               "code": "SBDMBA----------------------------",
               "description": "Ladies' Downhill Run 1",
               "shortDescription": "Run 1",
@@ -439,6 +474,8 @@ paths:
         - Unit
       description: Returns the Results for a unit. 
       operationId: getUnitResults
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -448,7 +485,9 @@ paths:
         200:
           description: Unit Results Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                       "code": "SBDMBA----------------------------",
                       "description": "Ladies' Downhill Run 1",
                       "shortDescription": "Run 1",
@@ -584,6 +623,8 @@ paths:
         - Event
       description: Returns a list of Events.
       operationId: listEvents
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -598,7 +639,8 @@ paths:
           description: Event Collection
           schema:
             type: array
-            example: {
+          examples:
+            application/json: {
                         total: 1,
                         items: [{
                           code: 'ALPMDH----------------',
@@ -678,6 +720,8 @@ paths:
         - Event
       description: Returns the Results for a Event.
       operationId: getEventResults
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -687,7 +731,9 @@ paths:
         200:
           description: Event Results Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                         "code": "'ALPMDH----------------",
                         "description": "Men's Downhill",
                         "discipline": {
@@ -777,6 +823,8 @@ paths:
         - Event
       description: Returns the Standings for a Event.
       operationId: getEventStandings
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -786,7 +834,9 @@ paths:
         200:
           description: Event Standings Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                       "code": "'ALPMDH----------------",
                       "description": "Men's Downhill",
                       "discipline": {
@@ -877,6 +927,8 @@ paths:
         - Event
       description: NOT TO BE IMPLEMENTED FOR PHASE 1, Returns the Brackets for a Event.
       operationId: getEventBrackets
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -898,6 +950,8 @@ paths:
         - Phase
       description: NOT TO BE IMPLMENTED FOR PHASE 1, Returns a list of Phases.
       operationId: listPhases
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -910,7 +964,9 @@ paths:
         200:
           description: Phase Collection
           schema:
-            example: {
+           type: object
+          examples:
+            application/json: {
                         total: 1,
                         items: [
                           {
@@ -974,6 +1030,8 @@ paths:
         - Phase
       description: Returns the detail of a Phase for a games.
       operationId: getPhaseByCode
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -983,7 +1041,9 @@ paths:
         200:
           description: Phase Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                       "code": "ALPMAC----------------FNL-",
                       "description": "Men's Alpine Combined",
                       "type": {
@@ -1043,6 +1103,8 @@ paths:
         - Phase
       description: Returns the Phase for a Event.
       operationId: getPhaseResults
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -1052,7 +1114,9 @@ paths:
         200:
           description: Event Phase Result Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                         "code": "ALPMAC----------------FNL-",
                         "description": "Men's Alpine Combined",
                         "type": {
@@ -1152,6 +1216,8 @@ paths:
         - Phase
       description: Returns the Standings for a Phase.
       operationId: getPhaseStandings
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -1161,7 +1227,9 @@ paths:
         200:
           description: Event Phase standing Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                         "code": "ALPMAC----------------FNL-",
                         "description": "Men's Alpine Combined",
                         "type": {
@@ -1265,6 +1333,8 @@ paths:
         - Medal Table
       description: Returns a Medal Table
       operationId: getMedalTable
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -1291,7 +1361,9 @@ paths:
         200:
           description: Medal Table
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                       "total": 3,
                       "items": [
                         {
@@ -1346,6 +1418,8 @@ paths:
         - Participant
       description: Returns a Participant Collection
       operationId: listParticipant
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -1365,7 +1439,9 @@ paths:
         200:
           description: Participant Collection
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                         total: 1,
                         items: [{
                           "code": "7810265",
@@ -1401,6 +1477,8 @@ paths:
         - Participant
       description: Returns the Details for a participant.
       operationId: getParticipant
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: participant
@@ -1410,7 +1488,9 @@ paths:
         200:
           description: Participant Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                         "code": "7810265",
                         "dob": "1971-12-28",
                         "familyName": "Cecon",
@@ -1447,6 +1527,8 @@ paths:
         - Venue
       description: Returns a list of venue for a games.
       operationId: listVenuesByGames
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -1480,7 +1562,9 @@ paths:
         200:
           description: Venue Detail
           schema:
-            example: {
+            type: object
+          examples:
+            application/json: {
                       "code": "ABT",
                       "description": "Alpensia Biathlon Centre",
                       "meta": {
@@ -1498,6 +1582,8 @@ paths:
         - Medal
       description: NOT TO BE IMPLEMENTED IN PHASE 1, Returns a Medal Collection
       operationId: listMedals
+      security:
+        - apikey: []
       parameters:
         - $ref: '#/parameters/code'
           name: games
@@ -1522,7 +1608,9 @@ paths:
         200:
           description: Medal Collection
           schema:
-            example: {}  
+            type: array
+          examples:
+            application/json: []  
 
 parameters:
 
