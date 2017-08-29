@@ -653,17 +653,17 @@ paths:
                             code: 'M',
                             description: 'Men'
                           },
-                          "links": [{
-                              "rel": "self",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
+                          links: [{
+                              rel: "self",
+                              href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
                             },
                             {
-                              "rel": "event-results",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
+                              rel: "event-results",
+                              href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
                             },
                             {
-                              "rel": "event-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
+                              rel: "event-standings",
+                              href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
                             }
                           ]
                         }]
@@ -700,18 +700,18 @@ paths:
                 meta: {
                   teamEvent: false
                 },
-                "links": [
+                links: [
                   {
-                    "rel": "self",
-                    "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
+                    rel: "self",
+                    href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
                   },
                   {
-                    "rel": "event-results",
-                    "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
+                    rel: "event-results",
+                    href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
                   },
                   {
-                    "rel": "event-standings",
-                    "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
+                    rel: "event-standings",
+                    href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
                   }
                 ]
             }
