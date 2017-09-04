@@ -44,7 +44,7 @@ paths:
           examples:
             application/json: {
                         total: 4,
-                        items: [{
+                        item: [{
                             code: 'OWG2018',
                             description: 'PyeongChang 2018 Olympics Winter Games'
                           },
@@ -110,7 +110,7 @@ paths:
           examples:
             application/json: {
                         total: 3,
-                        items: [{
+                        item: [{
                             code: 'ALP',
                             description: 'Alpine Skiing'
                           },
@@ -185,7 +185,7 @@ paths:
           examples:
             application/json: {
                         total: 2,
-                        items: [{
+                        item: [{
                             code: 'GBR',
                             description: 'Great Britain'
                           },
@@ -273,7 +273,7 @@ paths:
           examples:
             application/json: {
                         total: 1,
-                        items: [{
+                        item: [{
                           "code": "SBDMBA----------------------------",
                           "description": "Ladies' Downhill Run 1",
                           "shortDescription": "Run 1",
@@ -642,7 +642,7 @@ paths:
           examples:
             application/json: {
                         total: 1,
-                        items: [{
+                        item: [{
                           code: 'ALPMDH----------------',
                           description: "Men's Downhill",
                           discipline: {
@@ -1266,7 +1266,7 @@ paths:
           examples:
             application/json: {
                       "total": 3,
-                      "items": [
+                      "item": [
                         {
                           "rank": 1,
                           "medals": {
@@ -1344,7 +1344,7 @@ paths:
           examples:
             application/json: {
                         total: 1,
-                        items: [{
+                        item: [{
                           "code": "7810265",
                           "dob": "1971-12-28",
                           "familyName": "Cecon",
@@ -1439,7 +1439,7 @@ paths:
           schema:
             example: {
                         total: 1,
-                        items: [{
+                        item: [{
                           "code": "ABT",
                           "description": "Alpensia Biathlon Centre",
                           "meta": {
