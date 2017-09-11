@@ -272,7 +272,7 @@ paths:
             type: object
           examples:
             application/json: {
-                        total: 1,
+                        total: 4,
                         item: [{
                           "code": "SBDMBA----------------------------",
                           "description": "Ladies' Downhill Run 1",
@@ -287,7 +287,7 @@ paths:
                             "description": "Individuals"
                           },
                           "scheduleStatus": {
-                            "code": "SCHEDULED",
+                            "code": "DELAYED",
                             "description": "Delayed"
                           },
                           "phaseType": {
@@ -356,6 +356,258 @@ paths:
                             {
                               "rel": "event-brackets",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
+                            }
+                          ]
+                        },
+                        {
+                          "code": "BTH-------------------------------",
+                          "description": "Men's 7.5km - Standing",
+                          "shortDescription": "Men's 7.5km",
+                          "start": "2016-11-26T10:45:00Z",
+                          "end": "2016-11-27T13:20:00Z",
+                          "meta": {
+                            "medal": "none"
+                          },
+                          "type": {
+                            "code": "ATH",
+                            "description": "Individuals"
+                          },
+                          "scheduleStatus": {
+                            "code": "SCHEDULED",
+                            "description": "Scheduled"
+                          },
+                          "phaseType": {
+                            "code": "3",
+                            "description": "Competition"
+                          },
+                          "venue": {
+                            "code": "ABT",
+                            "description": "Alpensia Biathlon Centre"
+                          },
+                          "location": {
+                            "code": "ABT",
+                            "description": "Alpensia Biathlon Centre"
+                          },
+                          "games": {
+                            "code": "OWG2018",
+                            "description": "Pyongyang 2018 Olympics Winter Games"
+                          },
+                          "discipline": {
+                            "code": "BTH",
+                            "description": "Biathlon"
+                          },
+                          "event": {
+                            "code": "7.5KM---09070-----",
+                            "description": "Men's 7.5km - Standing"
+                          },
+                          "gender": {
+                            "code": "M",
+                            "description": "Male"
+                          },
+                          "phase": {
+                            "code": "BTHM----------------------",
+                            "description": "Men's Biathlon"
+                          },
+                          "links": [
+                            {
+                              "rel": "self",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------"
+                            },
+                            {
+                              "rel": "results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------/results"
+                            },
+                            {
+                              "rel": "phase-results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-------------------------------/results"
+                            },
+                            {
+                              "rel": "phase-standings",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-------------------------------/standings"
+                            },
+                            {
+                              "rel": "event",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/BTH-------------------------------"
+                            },
+                            {
+                              "rel": "event-results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/BTH-------------------------------/results"
+                            },
+                            {
+                              "rel": "event-standings",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/BTH-------------------------------/brackets"
+                            },
+                            {
+                              "rel": "event-brackets",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/BTH-------------------------------/brackets"
+                            }
+                          ]
+                        },
+                        {
+                          "code": "FSK-------------------------------",
+                          "description": "Pair Skating",
+                          "shortDescription": "Pair Skating",
+                          "start": "2016-11-26T09:45:00Z",
+                          "end": "2016-11-27T14:20:00Z",
+                          "meta": {
+                            "medal": "gold"
+                          },
+                          "type": {
+                            "code": "ATH",
+                            "description": "Individuals"
+                          },
+                          "scheduleStatus": {
+                            "code": "FINISHED",
+                            "description": "Finished"
+                          },
+                          "phaseType": {
+                            "code": "3",
+                            "description": "Competition"
+                          },
+                          "venue": {
+                            "code": "GIA",
+                            "description": "Gangneung Ice Arena"
+                          },
+                          "location": {
+                            "code": "GIA",
+                            "description": "Gangneung Ice Arena"
+                          },
+                          "games": {
+                            "code": "OWG2018",
+                            "description": "Pyongyang 2018 Olympics Winter Games"
+                          },
+                          "discipline": {
+                            "code": "FSK",
+                            "description": "Figure Skating"
+                          },
+                          "event": {
+                            "code": "PAIRS-------------",
+                            "description": "Pair Skating"
+                          },
+                          "gender": {
+                            "code": "X",
+                            "description": "Mixed"
+                          },
+                          "phase": {
+                            "code": "FSKXPAIRS-------------FNL-",
+                            "description": "Pair Skating"
+                          },
+                          "links": [
+                            {
+                              "rel": "self",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                            },
+                            {
+                              "rel": "results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/results"
+                            },
+                            {
+                              "rel": "phase-results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/results"
+                            },
+                            {
+                              "rel": "phase-standings",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/standings"
+                            },
+                            {
+                              "rel": "event",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------"
+                            },
+                            {
+                              "rel": "event-results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/results"
+                            },
+                            {
+                              "rel": "event-standings",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
+                            },
+                            {
+                              "rel": "event-brackets",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
+                            }
+                          ]
+                        },
+                        {
+                          "code": "FSK-------------------------------",
+                          "description": "Pair Skating",
+                          "shortDescription": "Pair Skating",
+                          "start": "2016-11-26T14:45:00Z",
+                          "end": "2016-11-27T16:20:00Z",
+                          "meta": {
+                            "medal": "bronze"
+                          },
+                          "type": {
+                            "code": "ATH",
+                            "description": "Individuals"
+                          },
+                          "scheduleStatus": {
+                            "code": "RUNNING",
+                            "description": "Running"
+                          },
+                          "phaseType": {
+                            "code": "3",
+                            "description": "Competition"
+                          },
+                          "venue": {
+                            "code": "GIA",
+                            "description": "Gangneung Ice Arena"
+                          },
+                          "location": {
+                            "code": "GIA",
+                            "description": "Gangneung Ice Arena"
+                          },
+                          "games": {
+                            "code": "OWG2018",
+                            "description": "Pyongyang 2018 Olympics Winter Games"
+                          },
+                          "discipline": {
+                            "code": "FSK",
+                            "description": "Figure Skating"
+                          },
+                          "event": {
+                            "code": "PAIRS-------------",
+                            "description": "Pair Skating"
+                          },
+                          "gender": {
+                            "code": "X",
+                            "description": "Mixed"
+                          },
+                          "phase": {
+                            "code": "FSKXPAIRS-------------FNL-",
+                            "description": "Pair Skating"
+                          },
+                          "links": [
+                            {
+                              "rel": "self",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                            },
+                            {
+                              "rel": "results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/results"
+                            },
+                            {
+                              "rel": "phase-results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/results"
+                            },
+                            {
+                              "rel": "phase-standings",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/standings"
+                            },
+                            {
+                              "rel": "event",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------"
+                            },
+                            {
+                              "rel": "event-results",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/results"
+                            },
+                            {
+                              "rel": "event-standings",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
+                            },
+                            {
+                              "rel": "event-brackets",
+                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
                             }
                           ]
                         }]
