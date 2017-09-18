@@ -274,7 +274,7 @@ paths:
             application/json: {
                         total: 4,
                         item: [{
-                          "code": "SBDMBA----------------------------",
+                          "code": "SBDMBA-------------------------100",
                           "description": "Ladies' Downhill Run 1",
                           "shortDescription": "Run 1",
                           "start": "2016-11-25T09:45:00Z",
@@ -360,7 +360,7 @@ paths:
                           ]
                         },
                         {
-                          "code": "BTH-------------------------------",
+                          "code": "BTH----------------------------200",
                           "description": "Men's 7.5km - Standing",
                           "shortDescription": "Men's 7.5km",
                           "start": "2016-11-26T10:45:00Z",
@@ -444,7 +444,7 @@ paths:
                           ]
                         },
                         {
-                          "code": "FSK-------------------------------",
+                          "code": "FSK----------------------------300",
                           "description": "Pair Skating",
                           "shortDescription": "Pair Skating",
                           "start": "2016-11-26T09:45:00Z",
@@ -528,7 +528,7 @@ paths:
                           ]
                         },
                         {
-                          "code": "FSK-------------------------------",
+                          "code": "FSK----------------------------400",
                           "description": "Pair Skating",
                           "shortDescription": "Pair Skating",
                           "start": "2016-11-26T14:45:00Z",
@@ -1658,7 +1658,59 @@ paths:
                             "code": "CHN",
                             "description": "China"
                           }
-                        }                        
+                        },
+                        {
+                          "rank": 4,
+                          "medals": {
+                            "gold": 1,
+                            "silver": 4,
+                            "bronze": 2,
+                            "total": 7
+                          },
+                          "organisation": {
+                            "code": "AUS",
+                            "description": "Australia"
+                          }
+                        }, 
+                        {
+                          "rank": 5,
+                          "medals": {
+                            "gold": 1,
+                            "silver": 4,
+                            "bronze": 2,
+                            "total": 7
+                          },
+                          "organisation": {
+                            "code": "CAN",
+                            "description": "Canada"
+                          }
+                        },
+                        {
+                          "rank": 6,
+                          "medals": {
+                            "gold": 1,
+                            "silver": 4,
+                            "bronze": 2,
+                            "total": 7
+                          },
+                          "organisation": {
+                            "code": "GER",
+                            "description": "Germany"
+                          }
+                        },
+                        {
+                          "rank": 7,
+                          "medals": {
+                            "gold": 1,
+                            "silver": 4,
+                            "bronze": 2,
+                            "total": 7
+                          },
+                          "organisation": {
+                            "code": "JPN",
+                            "description": "Japan"
+                          }
+                        }                         
                       ]
                     } 
 
