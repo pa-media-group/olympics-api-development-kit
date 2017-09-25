@@ -147,7 +147,6 @@ paths:
             application/json: {
                 code: 'BOB',
                 description: 'Bobsleigh',
-                eventOrder: 'DATE',
                 sport: {
                   code: "BS",
                   description: "Bobsleigh"
@@ -158,7 +157,8 @@ paths:
                 },
                 meta: {
                   scheduled: true,
-                  nonSport: true
+                  nonSport: true,
+                  eventOrder: 'DATE'
                 }
               }  
 
@@ -298,10 +298,6 @@ paths:
                             "code": "ASJ",
                             "description": "Alpensia Ski Jumping Ctr"
                           },
-                          "location": {
-                            "code": "BA1",
-                            "description": "Alpensia Ski Jump Ctr-Big Air"
-                          },
                           "games": {
                             "code": "OWG2018",
                             "description": "Pyongyang 2018 Olympics Winter Games"
@@ -381,10 +377,6 @@ paths:
                             "description": "Competition"
                           },
                           "venue": {
-                            "code": "ABT",
-                            "description": "Alpensia Biathlon Centre"
-                          },
-                          "location": {
                             "code": "ABT",
                             "description": "Alpensia Biathlon Centre"
                           },
@@ -468,10 +460,6 @@ paths:
                             "code": "GIA",
                             "description": "Gangneung Ice Arena"
                           },
-                          "location": {
-                            "code": "GIA",
-                            "description": "Gangneung Ice Arena"
-                          },
                           "games": {
                             "code": "OWG2018",
                             "description": "Pyongyang 2018 Olympics Winter Games"
@@ -549,10 +537,6 @@ paths:
                             "description": "Competition"
                           },
                           "venue": {
-                            "code": "GIA",
-                            "description": "Gangneung Ice Arena"
-                          },
-                          "location": {
                             "code": "GIA",
                             "description": "Gangneung Ice Arena"
                           },
@@ -656,10 +640,6 @@ paths:
               "venue": {
                 "code": "ASJ",
                 "description": "Alpensia Ski Jumping Ctr"
-              },
-              "location": {
-                "code": "BA1",
-                "description": "Alpensia Ski Jump Ctr-Big Air"
               },
               "games": {
                 "code": "OWG2018",
@@ -767,10 +747,6 @@ paths:
                       "venue": {
                         "code": "ASJ",
                         "description": "Alpensia Ski Jumping Ctr"
-                      },
-                      "location": {
-                        "code": "BA1",
-                        "description": "Alpensia Ski Jump Ctr-Big Air"
                       },
                       "games": {
                         "code": "OWG2018",
