@@ -157,8 +157,7 @@ paths:
                 },
                 meta: {
                   scheduled: true,
-                  nonSport: true,
-                  eventOrder: 'DATE'
+                  nonSport: true
                 }
               }  
 
