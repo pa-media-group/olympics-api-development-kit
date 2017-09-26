@@ -371,7 +371,8 @@ paths:
                           },
                           "scheduleStatus": {
                             "code": "SCHEDULED",
-                            "description": "Scheduled"
+                            "description": "Scheduled",
+                            "notes": "Competition has not started and start is late (no new time)"
                           },
                           "phaseType": {
                             "code": "3",
@@ -379,7 +380,8 @@ paths:
                           },
                           "venue": {
                             "code": "ABT",
-                            "description": "Alpensia Biathlon Centre"
+                            "description": "Alpensia Biathlon Centre",
+                            "city": "PyeongChang"
                           },
                           "games": {
                             "code": "OWG2018",
@@ -451,7 +453,8 @@ paths:
                           },
                           "scheduleStatus": {
                             "code": "FINISHED",
-                            "description": "Finished"
+                            "description": "Finished",
+                            "notes": "All play is complete in the unit"
                           },
                           "phaseType": {
                             "code": "3",
@@ -459,7 +462,8 @@ paths:
                           },
                           "venue": {
                             "code": "GIA",
-                            "description": "Gangneung Ice Arena"
+                            "description": "Gangneung Ice Arena",
+                            "city": "PyeongChang"
                           },
                           "games": {
                             "code": "OWG2018",
@@ -531,7 +535,8 @@ paths:
                           },
                           "scheduleStatus": {
                             "code": "RUNNING",
-                            "description": "Running"
+                            "description": "Running",
+                            "notes": "Competition in progress"
                           },
                           "phaseType": {
                             "code": "3",
@@ -539,7 +544,8 @@ paths:
                           },
                           "venue": {
                             "code": "GIA",
-                            "description": "Gangneung Ice Arena"
+                            "description": "Gangneung Ice Arena",
+                            "city": "Gangneung"
                           },
                           "games": {
                             "code": "OWG2018",
@@ -632,7 +638,8 @@ paths:
               },
               "scheduleStatus": {
                 "code": "SCHEDULED",
-                "description": "Delayed"
+                "description": "Delayed",
+                "notes": "Competition has not started and start is late (no new time)"
               },
               "phaseType": {
                 "code": "0",
@@ -640,7 +647,8 @@ paths:
               },
               "venue": {
                 "code": "ASJ",
-                "description": "Alpensia Ski Jumping Ctr"
+                "description": "Alpensia Ski Jumping Ctr",
+                "city": "PyeongChang"
               },
               "games": {
                 "code": "OWG2018",
@@ -739,7 +747,8 @@ paths:
                       },
                       "scheduleStatus": {
                         "code": "SCHEDULED",
-                        "description": "Delayed"
+                        "description": "Delayed",
+                        "notes": "Competition has not started and start is late (no new time)"
                       },
                       "phaseType": {
                         "code": "0",
@@ -747,7 +756,8 @@ paths:
                       },
                       "venue": {
                         "code": "ASJ",
-                        "description": "Alpensia Ski Jumping Ctr"
+                        "description": "Alpensia Ski Jumping Ctr",
+                        "city": "PyeongChang"
                       },
                       "games": {
                         "code": "OWG2018",
