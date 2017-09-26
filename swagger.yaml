@@ -287,7 +287,8 @@ paths:
                           },
                           "scheduleStatus": {
                             "code": "DELAYED",
-                            "description": "Delayed"
+                            "description": "Delayed",
+                            "notes": "Competition has not started and start is late (no new time)"
                           },
                           "phaseType": {
                             "code": "0",
@@ -295,7 +296,8 @@ paths:
                           },
                           "venue": {
                             "code": "ASJ",
-                            "description": "Alpensia Ski Jumping Ctr"
+                            "description": "Alpensia Ski Jumping Ctr",
+                            "city": "Gangneung"
                           },
                           "games": {
                             "code": "OWG2018",
