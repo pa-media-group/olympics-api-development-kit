@@ -246,7 +246,6 @@ paths:
           name: organisation
           in: query
           required: false
-        - $ref: '#/parameters/status'
         - $ref: '#/parameters/limit'  
       responses:
         200:
