@@ -318,10 +318,6 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/results"
                             },
                             {
-                              "rel": "phase-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/standings"
-                            },
-                            {
                               "rel": "event",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
                             },
@@ -390,10 +386,6 @@ paths:
                             {
                               "rel": "phase-results",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-------------------------------/results"
-                            },
-                            {
-                              "rel": "phase-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-------------------------------/standings"
                             },
                             {
                               "rel": "event",
@@ -466,10 +458,6 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/results"
                             },
                             {
-                              "rel": "phase-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/standings"
-                            },
-                            {
                               "rel": "event",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------"
                             },
@@ -538,10 +526,6 @@ paths:
                             {
                               "rel": "phase-results",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/results"
-                            },
-                            {
-                              "rel": "phase-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/standings"
                             },
                             {
                               "rel": "event",
@@ -636,10 +620,6 @@ paths:
                 {
                   "rel": "phase-results",
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/results"
-                },
-                {
-                  "rel": "phase-standings",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/standings"
                 },
                 {
                   "rel": "event",
@@ -1003,10 +983,6 @@ paths:
                         {
                           "rel": "phase-results",
                           "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/results"
-                        },
-                        {
-                          "rel": "phase-standings",
-                          "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------/standings"
                         },
                         {
                           "rel": "event",
