@@ -328,14 +328,6 @@ paths:
                             {
                               "rel": "event-results",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
-                            },
-                            {
-                              "rel": "event-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
-                            },
-                            {
-                              "rel": "event-brackets",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
                             }
                           ]
                         },
@@ -410,14 +402,6 @@ paths:
                             {
                               "rel": "event-results",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/BTH-------------------------------/results"
-                            },
-                            {
-                              "rel": "event-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/BTH-------------------------------/brackets"
-                            },
-                            {
-                              "rel": "event-brackets",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/BTH-------------------------------/brackets"
                             }
                           ]
                         },
@@ -492,14 +476,6 @@ paths:
                             {
                               "rel": "event-results",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/results"
-                            },
-                            {
-                              "rel": "event-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
-                            },
-                            {
-                              "rel": "event-brackets",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
                             }
                           ]
                         },
@@ -574,14 +550,6 @@ paths:
                             {
                               "rel": "event-results",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/results"
-                            },
-                            {
-                              "rel": "event-standings",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
-                            },
-                            {
-                              "rel": "event-brackets",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/brackets"
                             }
                           ]
                         }]
@@ -680,14 +648,6 @@ paths:
                 {
                   "rel": "event-results",
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
-                },
-                {
-                  "rel": "event-standings",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/standings"
-                },
-                {
-                  "rel": "event-brackets",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
                 }
               ]
             }  
@@ -880,10 +840,6 @@ paths:
                   {
                     rel: "event-results",
                     href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
-                  },
-                  {
-                    rel: "event-standings",
-                    href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
                   }
                 ]
             }
@@ -1059,10 +1015,6 @@ paths:
                         {
                           "rel": "event-results",
                           "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/results"
-                        },
-                        {
-                          "rel": "event-standings",
-                          "href": "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/brackets"
                         }
                       ]
                     } 
@@ -1195,16 +1147,6 @@ paths:
       parameters:
         - $ref: '#/parameters/code'
           name: games
-        - $ref: '#/parameters/code'
-          name: discipline
-          in: query
-          required: false
-        - $ref: '#/parameters/code'
-          name: organisation
-          in: query
-          required: false          
-        - $ref: '#/parameters/limit'
-          name: limit
       responses:
         200:
           description: Medal Table
