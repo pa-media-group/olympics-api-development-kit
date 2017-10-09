@@ -305,7 +305,7 @@ paths:
                             "code": "ALPMAC----------------FNL-",
                             "description": "Men's Alpine Combined"
                           },
-                          "entrants": [
+                          "entrant": [
                               {
                                   "startOrder": 2,
                                   "sortOrder": 2,
@@ -333,7 +333,7 @@ paths:
                                   }
                               }
                           ],
-                          "links": [{
+                          "link": [{
                               "rel": "self",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
                             },
@@ -402,7 +402,7 @@ paths:
                             "code": "BTHM----------------------",
                             "description": "Men's Biathlon"
                           },
-                          "links": [
+                          "link": [
                             {
                               "rel": "self",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------"
@@ -472,7 +472,7 @@ paths:
                             "code": "FSKXPAIRS-------------FNL-",
                             "description": "Pair Skating"
                           },
-                          "links": [
+                          "link": [
                             {
                               "rel": "self",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
@@ -542,7 +542,7 @@ paths:
                             "code": "FSKXPAIRS-------------FNL-",
                             "description": "Pair Skating"
                           },
-                          "entrants": [
+                          "entrant": [
                             {
                                 "startOrder": 2,
                                 "sortOrder": 2,
@@ -570,7 +570,7 @@ paths:
                                 }
                             }
                         ],
-                        "links": [
+                        "link": [
                           {
                             "rel": "self",
                             "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
@@ -664,7 +664,7 @@ paths:
                 "code": "ALPMAC----------------FNL-",
                 "description": "Men's Alpine Combined"
               },
-              "entrants": [
+              "entrant": [
                   {
                       "startOrder": 2,
                       "sortOrder": 2,
@@ -692,7 +692,7 @@ paths:
                       }
                   }
               ],
-              "links": [
+              "link": [
                 {
                   "rel": "self",
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
@@ -896,7 +896,7 @@ paths:
                 meta: {
                   teamEvent: false
                 },
-                links: [
+                link: [
                   {
                     rel: "self",
                     href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
@@ -1059,7 +1059,7 @@ paths:
                         "code": "M",
                         "description": "Male"
                       },          
-                      "links": [
+                      "link": [
                         {
                           "rel": "self",
                           "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA----------------------------"
