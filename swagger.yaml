@@ -514,30 +514,58 @@ paths:
                             "code": "FSKXPAIRS-------------FNL-",
                             "description": "Pair Skating"
                           },
-                          "links": [
+                          "entrants": [
                             {
-                              "rel": "self",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                                "startOrder": 2,
+                                "sortOrder": 2,
+                                "competitor": {
+                                    "code": "CURXTEAM2---DEN01",
+                                    "description": "Denmark",
+                                    "type": "T",
+                                    "organisation": {
+                                        "code": "DEN",
+                                        "description": "Denmark"
+                                    }
+                                }
                             },
                             {
-                              "rel": "results",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/results"
-                            },
-                            {
-                              "rel": "phase-results",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/results"
-                            },
-                            {
-                              "rel": "event",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------"
-                            },
-                            {
-                              "rel": "event-results",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/results"
+                                "startOrder": 1,
+                                "sortOrder": 1,
+                                "competitor": {
+                                    "code": "CURXTEAM2---BEL01",
+                                    "description": "Belgium",
+                                    "type": "T",
+                                    "organisation": {
+                                        "code": "BEL",
+                                        "description": "Belgium"
+                                    }
+                                }
                             }
-                          ]
-                        }]
-                      }   
+                        ],
+                        "links": [
+                          {
+                            "rel": "self",
+                            "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                          },
+                          {
+                            "rel": "results",
+                            "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/results"
+                          },
+                          {
+                            "rel": "phase-results",
+                            "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-------------------------------/results"
+                          },
+                          {
+                            "rel": "event",
+                            "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------"
+                          },
+                          {
+                            "rel": "event-results",
+                            "href": "http://olympics.api.press.net/v3/games/OWG2018/event/FSK-------------------------------/results"
+                          }
+                        ]
+                      }]
+                    }   
 
   /games/{games}/unit/{unit}:
     get:
@@ -608,6 +636,34 @@ paths:
                 "code": "ALPMAC----------------FNL-",
                 "description": "Men's Alpine Combined"
               },
+              "entrants": [
+                  {
+                      "startOrder": 2,
+                      "sortOrder": 2,
+                      "competitor": {
+                          "code": "CURXTEAM2---DEN01",
+                          "description": "Denmark",
+                          "type": "T",
+                          "organisation": {
+                              "code": "DEN",
+                              "description": "Denmark"
+                          }
+                      }
+                  },
+                  {
+                      "startOrder": 1,
+                      "sortOrder": 1,
+                      "competitor": {
+                          "code": "CURXTEAM2---BEL01",
+                          "description": "Belgium",
+                          "type": "T",
+                          "organisation": {
+                              "code": "BEL",
+                              "description": "Belgium"
+                          }
+                      }
+                  }
+              ],
               "links": [
                 {
                   "rel": "self",
