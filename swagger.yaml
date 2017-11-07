@@ -1124,14 +1124,17 @@ paths:
                           "code": "M",
                           "description": "Male"
                         },
-                        "results": [{
+                        "result": [{
                           "rank": 1,
-                          "value": "50.53",
-                          "valueType": "TIME",
                           "sortOrder": 1,
                           "startOrder": 1,
                           "startSortOrder": 1,
                           "diff": "0.00",
+                          "value": "50.53",
+                          "valueType": {
+                            "code": "TIME",
+                            "description": "Time"
+                          },
                           "invalidResultMark": {
                             "code": "DSQ",
                             "description": "Disqualified"
@@ -1153,7 +1156,7 @@ paths:
                             "against": 12,
                             "ratio": 2,
                             "unchecked": true,
-                            "rankEqual": ""
+                            "rankEqual": false
                           },
                           "competitor": {
                             "code": "BOBOTEAM4------USA01",
@@ -1166,18 +1169,12 @@ paths:
                             "team": {
                               "name": "USA"
                             },
-                            "athlete": {
+                            "athlete": [{
                               "givenName": "",
                               "familyName": "",
                               "dob": "",
                               "meta": {
-                                "class": "",
-                                "horse": ""
-                              },
-                              "guide": {
-                                "id": "",
-                                "familyName": "",
-                                "givenName": ""
+                                "class": ""
                               },
                               "gender": {
                                 "code": "M",
@@ -1187,7 +1184,7 @@ paths:
                                 "code": "USA",
                                 "description": "USA"
                               }
-                            }
+                            }]
                           }
                         }]
                       } 
