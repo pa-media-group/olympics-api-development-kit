@@ -258,7 +258,6 @@ paths:
                         item: [{
                           "code": "SBDMBA-------------------------100",
                           "description": "Ladies' Downhill Run 1",
-                          "shortDescription": "Run 1",
                           "start": "2016-11-25T09:45:00Z",
                           "end": "2016-11-26T14:20:00Z",
                           "meta": {
@@ -354,7 +353,6 @@ paths:
                         {
                           "code": "BTH----------------------------200",
                           "description": "Men's 7.5km - Standing",
-                          "shortDescription": "Men's 7.5km",
                           "start": "2016-11-26T10:45:00Z",
                           "end": "2016-11-27T13:20:00Z",
                           "meta": {
@@ -420,7 +418,6 @@ paths:
                         {
                           "code": "FSK----------------------------300",
                           "description": "Pair Skating",
-                          "shortDescription": "Pair Skating",
                           "start": "2016-11-26T09:45:00Z",
                           "end": "2016-11-27T14:20:00Z",
                           "meta": {
@@ -486,7 +483,6 @@ paths:
                         {
                           "code": "FSK----------------------------400",
                           "description": "Pair Skating",
-                          "shortDescription": "Pair Skating",
                           "start": "2016-11-26T14:45:00Z",
                           "end": "2016-11-27T16:20:00Z",
                           "meta": {
@@ -601,7 +597,6 @@ paths:
             application/json: {
               "code": "SBDMBA----------------------------",
               "description": "Ladies' Downhill Run 1",
-              "shortDescription": "Run 1",
               "start": "2016-11-25T09:45:00Z",
               "end": "2016-11-26T14:20:00Z",
               "meta": {
@@ -718,7 +713,6 @@ paths:
             application/json: {
                       "code": "SBDMBA----------------------------",
                       "description": "Ladies' Downhill Run 1",
-                      "shortDescription": "Run 1",
                       "start": "2016-11-25T09:45:00Z",
                       "end": "2016-11-26T14:20:00Z",
                       "meta": {
