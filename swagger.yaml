@@ -338,7 +338,7 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
                             },
                             {
-                              "rel": "results",
+                              "rel": "result",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
                             },
                             {
@@ -346,7 +346,7 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
                             },
                             {
-                              "rel": "phase-results",
+                              "rel": "phase-result",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                             }
                           ]
@@ -404,7 +404,7 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------"
                             },
                             {
-                              "rel": "results",
+                              "rel": "result",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------/result"
                             },
                             {
@@ -412,7 +412,7 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------"
                             },
                             {
-                              "rel": "phase-results",
+                              "rel": "phase-result",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------/result"
                             }
                           ]
@@ -470,7 +470,7 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
                             },
                             {
-                              "rel": "results",
+                              "rel": "result",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
                             },
                             {
@@ -478,7 +478,7 @@ paths:
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
                             },
                             {
-                              "rel": "phase-results",
+                              "rel": "phase-result",
                               "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
                             }
                           ]
@@ -564,7 +564,7 @@ paths:
                             "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
                           },
                           {
-                            "rel": "results",
+                            "rel": "result",
                             "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
                           },
                           {
@@ -572,7 +572,7 @@ paths:
                             "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
                           },
                           {
-                            "rel": "phase-results",
+                            "rel": "phase-result",
                             "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
                           }
                         ]
@@ -682,7 +682,7 @@ paths:
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
                 },
                 {
-                  "rel": "results",
+                  "rel": "result",
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
                 },
                 {
@@ -690,13 +690,13 @@ paths:
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
                 },
                 {
-                  "rel": "phase-results",
+                  "rel": "phase-result",
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                 }
               ]
             }  
 
-  /games/{games}/unit/{unit}/results:
+  /games/{games}/unit/{unit}/result:
     get:
       tags:
         - Unit
@@ -769,7 +769,7 @@ paths:
                         "code": "ALPMAC----------------FNL-",
                         "description": "Men's Alpine Combined"
                       },
-                      "results": [
+                      "result": [
                         {
                           "rank": 1,
                           "value": "50.53",
@@ -869,13 +869,13 @@ paths:
                     href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
                   },
                   {
-                    rel: "event-results",
+                    rel: "event-result",
                     href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/result"
                   }
                 ]
             }
 
-  /games/{games}/event/{event}/results:
+  /games/{games}/event/{event}/result:
     get:
       tags:
         - Event
@@ -908,7 +908,7 @@ paths:
                         "meta": {
                           "teamEvent": false
                         },
-                        "results": [
+                        "result": [
                           {
                               "rank": 1,
                               "value": "50.53",
@@ -982,7 +982,7 @@ paths:
                             href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/result"
                           },
                           {
-                            rel: "event-results",
+                            rel: "event-result",
                             href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
                           }
                         ]
@@ -1042,13 +1042,13 @@ paths:
                           "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
                         },
                         {
-                          "rel": "phase-results",
+                          "rel": "phase-result",
                           "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                         }
                       ]
                     } 
 
-  /games/{games}/phase/{phase}/results:
+  /games/{games}/phase/{phase}/result:
     get:
       tags:
         - Phase
