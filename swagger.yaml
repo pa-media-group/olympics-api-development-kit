@@ -772,6 +772,7 @@ paths:
                           "startOrder": 1,
                           "startSortOrder": 1,
                           "diff": "0.00",
+                          "medal": "gold",
                           "invalidResultMark": {
                             "code": "DSQ",
                             "description": "Disqualified"
@@ -1094,6 +1095,7 @@ paths:
                           "startSortOrder": 1,
                           "diff": "0.00",
                           "value": "50.53",
+                          "medal": "gold",
                           "valueType": {
                             "code": "TIME",
                             "description": "Time"
