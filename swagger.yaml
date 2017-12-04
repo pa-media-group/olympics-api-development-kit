@@ -890,98 +890,127 @@ paths:
             type: object
           examples:
             application/json: {
-                        "code": "'ALPMDH----------------",
-                        "description": "Men's Downhill",
-                        "discipline": {
-                          "code": "ALP",
-                          "description": "Alpine Skiing"
-                        },
-                        "gender": {
-                          "code": "M",
-                          "description": "Men"
-                        },
-                        "meta": {
-                          "teamEvent": false
-                        },
-                        "result": [
-                          {
-                              "rank": 1,
-                              "value": "50.53",
-                              "valueType": "TIME",
-                              "sortOrder": 1,
-                              "startOrder": 1,
-                              "startSortOrder": 1,
-                              "diff": "0.00",
-                              "invalidResultMark": {
-                                "code": "DSQ",
-                                "description": "Disqualified"
-                              },
-                              "qualificationMark": {
-                                "code": "QT",
-                                "description": "Qualified by Time"
-                              },
-                              "wonLostTied": {
-                                "code": "T",
-                                "description": "Team / Athlete tied"
-                              },
-                              "meta": {
-                                "won": 1,
-                                "lost": 3,
-                                "tied": 2,
-                                "played": 6,
-                                "for": 21,
-                                "against": 12,
-                                "ratio": 2,
-                                "unchecked": true,
-                                "rankEqual": ""
-                              },
-                              "competitor": {
-                                "code": "BOBOTEAM4------USA01",
-                                "type": "T",
-                                "bib": "12",
-                                "organisation": {
-                                  "code": "USA",
-                                  "description": "USA"
+                                "code": "ALPMSG----------------",
+                                "description": "Men's Super-G",
+                                "discipline": {
+                                  "code": "ALP",
+                                  "description": "Alpine Skiing"
                                 },
-                                "team": {
-                                  "name": "USA"
+                                "gender": {
+                                  "code": "M",
+                                  "description": "Men"
                                 },
-                                "athlete": {
-                                  "givenName": "",
-                                  "familyName": "",
-                                  "dob": "",
-                                  "meta": {
-                                    "class": "",
-                                    "horse": ""
-                                  },
-                                  "guide": {
-                                    "id": "",
-                                    "familyName": "",
-                                    "givenName": ""
-                                  },
-                                  "gender": {
-                                    "code": "M",
-                                    "description": "Male"
-                                  },
-                                  "organisation": {
-                                    "code": "USA",
-                                    "description": "USA"
+                                "games": {
+                                  "code": "OWG2018",
+                                  "description": "PyeongChang 2018 Olympic Winter Games"
+                                },
+                                "result": [
+                                  {
+                                    "rank": "1",
+                                    "sortOrder": 1,
+                                    "diff": "0.00",
+                                    "unchecked": false,
+                                    "rankEqual": false,
+                                    "value": "1:43.21",
+                                    "medal": "gold",
+                                    "resultType": {
+                                      "code": "TIME",
+                                      "description": "Time"
+                                    },
+                                    "competitor": {
+                                      "code": "7705302",
+                                      "type": "A",
+                                      "organisation": {
+                                        "code": "NOR",
+                                        "description": "Norway"
+                                      },
+                                      "athlete": [
+                                        {
+                                          "code": "7705302",
+                                          "order": 1,
+                                          "givenName": "Guro Haugo",
+                                          "familyName": "SKEIE",
+                                          "organisation": {
+                                            "code": "NOR",
+                                            "description": "Norway"
+                                          },
+                                          "gender": {
+                                            "code": "F",
+                                            "description": "Female"
+                                          },
+                                          "meta": {
+                                            "dob": "1997-07-07",
+                                            "bib": "7"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "item": [
+                                      {
+                                        "rank": "1",
+                                        "sortOrder": 1,
+                                        "diff": "0.00",
+                                        "unchecked": false,
+                                        "rankEqual": false,
+                                        "value": "49.68",
+                                        "resultType": {
+                                          "code": "TIME",
+                                          "description": "Time"
+                                        },
+                                        "unit": {
+                                          "code": "ALPWSL----------------FNL-000200--",
+                                          "description": "Ladies' Slalom Run 2",
+                                          "phase": {
+                                            "code": "ALPWSL----------------FNL-",
+                                            "description": "Ladies' Slalom",
+                                            "phaseType": {
+                                              "code": 3,
+                                              "description": "Competition"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "rank": "1",
+                                        "sortOrder": 1,
+                                        "diff": "0.00",
+                                        "unchecked": false,
+                                        "rankEqual": false,
+                                        "value": "53.53",
+                                        "resultType": {
+                                          "code": "TIME",
+                                          "description": "Time"
+                                        },
+                                        "unit": {
+                                          "code": "ALPWSL----------------FNL-000100--",
+                                          "description": "Ladies' Slalom Run 1",
+                                          "phase": {
+                                            "code": "ALPWSL----------------FNL-",
+                                            "description": "Ladies' Slalom",
+                                            "phaseType": {
+                                              "code": 3,
+                                              "description": "Competition"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
                                   }
-                                }
-                              }
-                            }
-                        ],
-                        link: [
-                          {
-                            rel: "self",
-                            href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/result"
-                          },
-                          {
-                            rel: "event-result",
-                            href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
-                          }
-                        ]
-                    } 
+                                ],
+                                "meta": {
+                                  "teamEvent": false
+                                },
+                                "link": [
+                                  {
+                                    "rel": "event",
+                                    "href": "http://localhost:8002/publish/olympics/api/v3/games/OWG2018/event/ALPMSG----------------"
+                                  },
+                                  {
+                                    "rel": "self",
+                                    "href": "http://localhost:8002/publish/olympics/api/v3/games/OWG2018/event/ALPMSG----------------/result"
+                                  }
+                                ]
+                              } 
 
   #
   # Phase Collections
