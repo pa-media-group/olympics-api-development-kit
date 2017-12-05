@@ -906,14 +906,16 @@ paths:
                                 },
                                 "result": [
                                   {
+                                    "medal": "gold",
                                     "rank": "1",
                                     "sortOrder": 1,
                                     "diff": "0.00",
-                                    "unchecked": false,
-                                    "rankEqual": false,
+                                    "meta": {
+                                      "unchecked": false,
+                                      "rankEqual": false
+                                    },
                                     "value": "1:43.21",
-                                    "medal": "gold",
-                                    "resultType": {
+                                    "valueType": {
                                       "code": "TIME",
                                       "description": "Time"
                                     },
@@ -950,10 +952,12 @@ paths:
                                         "rank": "1",
                                         "sortOrder": 1,
                                         "diff": "0.00",
-                                        "unchecked": false,
-                                        "rankEqual": false,
+                                        "meta": {
+                                          "unchecked": false,
+                                          "rankEqual": false
+                                        },
                                         "value": "49.68",
-                                        "resultType": {
+                                        "valueType": {
                                           "code": "TIME",
                                           "description": "Time"
                                         },
@@ -974,10 +978,12 @@ paths:
                                         "rank": "1",
                                         "sortOrder": 1,
                                         "diff": "0.00",
-                                        "unchecked": false,
-                                        "rankEqual": false,
+                                        "meta": {
+                                          "unchecked": false,
+                                          "rankEqual": false
+                                        },
                                         "value": "53.53",
-                                        "resultType": {
+                                        "valueType": {
                                           "code": "TIME",
                                           "description": "Time"
                                         },
@@ -1003,11 +1009,11 @@ paths:
                                 "link": [
                                   {
                                     "rel": "event",
-                                    "href": "http://localhost:8002/publish/olympics/api/v3/games/OWG2018/event/ALPMSG----------------"
+                                    "href": "http://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------"
                                   },
                                   {
                                     "rel": "self",
-                                    "href": "http://localhost:8002/publish/olympics/api/v3/games/OWG2018/event/ALPMSG----------------/result"
+                                    "href": "http://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------/result"
                                   }
                                 ]
                               } 
@@ -1177,11 +1183,11 @@ paths:
                         "link": [
                           {
                             "rel": "self",
-                            "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
+                            "href": "http://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------/result"
                           },
                           {
                             "rel": "phase",
-                            "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
+                            "href": "http://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------"
                           }
                         ]
                       } 
