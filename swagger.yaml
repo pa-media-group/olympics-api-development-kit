@@ -1190,8 +1190,166 @@ paths:
                             "href": "http://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------"
                           }
                         ]
-                      } 
+                      }
                       
+  #
+  # Venue Resource
+  # 
+            
+  /games/{games}/venue:
+    get:
+      tags:
+        - Venue
+      description: Returns a list of venues for a games.
+      operationId: listVenue
+      security:
+        - apikey: []
+      parameters:
+        - $ref: '#/parameters/code'
+          name: games
+        - $ref: '#/parameters/limit'
+      responses:
+        200:
+          description: Venue Collection
+          schema:
+            type: object
+          examples:
+            application/json: {
+                        total: 2,
+                        item: [{
+                          "code": "ABT",
+                          "description": "Alpensia Biathlon Centre",
+                          "city": "PyeongChang",
+                          "meta": {
+                            "competition": true
+                          }
+                        },
+                        {
+                          "code": "ACC",
+                          "description": "Alpensia Cross-Ctry Ctr",
+                          "city": "PyeongChang",
+                          "meta": {
+                            "competition": true
+                          }
+                        }]
+                      }                    
+  
+  /games/{games}/venue/{venue}:
+    get:
+      tags:
+        - Venue
+      description: Returns the detail of a Venue for a games.
+      operationId: getVenue
+      security:
+        - apikey: []
+      parameters:
+        - $ref: '#/parameters/code'
+          name: games
+        - $ref: '#/parameters/code'
+          name: venue
+      responses:
+        200:
+          description: Venue Detail
+          schema:
+            type: object
+          examples:
+            application/json: {
+              "code": "ABT",
+              "description": "Alpensia Biathlon Centre",
+              "city": "PyeongChang",
+              "meta": {
+                "competition": true
+              }
+            }
+      
+  #
+  # Participant Resource
+  # 
+            
+  /games/{games}/participant:
+    get:
+      tags:
+        - Participant
+      description: Returns a list of participants for a games.
+      operationId: getParticipant
+      security:
+        - apikey: []
+      parameters:
+        - $ref: '#/parameters/code'
+          name: games
+        - $ref: '#/parameters/limit'
+      responses:
+        200:
+          description: Participant Collection
+          schema:
+            type: object
+          examples:
+            application/json: {
+                        total: 2,
+                        item: [{
+                          "code": "7700095",
+                          "givenName": "Forough",
+                          "familyName": "ABBASI",
+                          "dob": "1993-09-15",
+                          "gender": {
+                            "code": "F",
+                            "description": "Female"
+                          },
+                          "organisation": {
+                            "code": "IRI",
+                            "description": "Islamic Rep. of Iran"
+                          }
+                        },
+                        {
+                          "code": "7701162",
+                          "givenName": "Agnese",
+                          "familyName": "ABOLTINA",
+                          "dob": "1996-02-07",
+                          "gender": {
+                            "code": "F",
+                            "description": "Female"
+                          },
+                          "organisation": {
+                            "code": "LAT",
+                            "description": "Latvia"
+                          }
+                        }]
+                      }                    
+  
+  /games/{games}/participant/{participant}:
+    get:
+      tags:
+        - Participant
+      description: Returns the detail of a Participant for a games.
+      operationId: getVenue
+      security:
+        - apikey: []
+      parameters:
+        - $ref: '#/parameters/code'
+          name: games
+        - $ref: '#/parameters/code'
+          name: participant
+      responses:
+        200:
+          description: Participant Detail
+          schema:
+            type: object
+          examples:
+            application/json: {
+                "code": "7700095",
+                "givenName": "Forough",
+                "familyName": "ABBASI",
+                "dob": "1993-09-15",
+                "gender": {
+                  "code": "F",
+                  "description": "Female"
+                },
+                "organisation": {
+                  "code": "IRI",
+                  "description": "Islamic Rep. of Iran"
+                }
+              }
+            
   #
   # Medal Table Collections
   # 
