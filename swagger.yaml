@@ -5,7 +5,7 @@ info:
   title: "Olympics API (v3)"
   description: Olympics API v3 Design
 
-host: olympics.api.pressassociaton.io
+host: olympics.api.pressassociation.io
 
 securityDefinitions:
   apikey:
