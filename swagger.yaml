@@ -6,6 +6,7 @@ info:
   description: Olympics API v3 Design
 
 host: olympics.api.pressassociation.io
+basePath: /v3
 
 securityDefinitions:
   apikey:
