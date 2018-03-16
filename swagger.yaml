@@ -131,7 +131,7 @@ paths:
       tags:
         - Discipline
       description: Returns the detail of a discipline for a games.
-      operationId: listDisciplinesByGames
+      operationId: getDisciplinesByGames
       security:
         - apikey: []
       parameters:
