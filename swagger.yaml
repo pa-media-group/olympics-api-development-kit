@@ -26,7 +26,6 @@ paths:
   #
   # Games Resource
   # 
-
   /games:
     get:
       tags:
@@ -64,7 +63,6 @@ paths:
                         ]
                       }
             
-  
   /games/{games}:
     get:
       tags:
@@ -86,11 +84,10 @@ paths:
                 code: 'OCOG2020',
                 description: 'Olympic Games Tokyo 2020'
               }
-   
+  
   #
   # Discipline Resource
   # 
-            
   /games/{games}/discipline:
     get:
       tags:
@@ -165,7 +162,6 @@ paths:
   #
   # Organisation Collections
   # 
-
   /games/{games}/organisation:
     get:
       tags:
@@ -223,7 +219,6 @@ paths:
   #
   # Unit Collections
   # 
-
   /games/{games}/unit:
     get:
       tags:
@@ -825,7 +820,6 @@ paths:
   #
   # Event Collections
   # 
-
   /games/{games}/event/{event}:
     get:
       tags:
