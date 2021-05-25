@@ -5,7 +5,7 @@ info:
   title: "Olympics API (v3)"
   description: Olympics API v3 Design
 
-host: olympics.api.pressassociation.io
+host: olympics.api.pamedia.io
 basePath: /v3
 
 securityDefinitions:
@@ -13,19 +13,19 @@ securityDefinitions:
     type: apiKey
     name: apikey
     in: header
-    
+
 schemes:
   - https
   - http
-  
+
 produces:
   - application/json
-  
+
 paths:
 
   #
   # Games Resource
-  # 
+  #
   /games:
     get:
       tags:
@@ -62,7 +62,7 @@ paths:
                           }
                         ]
                       }
-            
+
   /games/{games}:
     get:
       tags:
@@ -84,10 +84,10 @@ paths:
                 code: 'OCOG2020',
                 description: 'Olympic Games Tokyo 2020'
               }
-  
+
   #
   # Discipline Resource
-  # 
+  #
   /games/{games}/discipline:
     get:
       tags:
@@ -121,7 +121,7 @@ paths:
                             description: 'Bobsleigh'
                           }
                         ]
-                      }            
+                      }
 
   /games/{games}/discipline/{discipline}:
     get:
@@ -157,11 +157,11 @@ paths:
                   scheduled: true,
                   nonSport: true
                 }
-              }  
+              }
 
   #
   # Organisation Collections
-  # 
+  #
   /games/{games}/organisation:
     get:
       tags:
@@ -190,7 +190,7 @@ paths:
                             description: 'Algeria'
                           }
                         ]
-                      }           
+                      }
 
   /games/{games}/organisation/{organisation}:
     get:
@@ -214,11 +214,11 @@ paths:
             application/json: {
               code: 'GBR',
               description: 'Great Britain',
-            }  
+            }
 
   #
   # Unit Collections
-  # 
+  #
   /games/{games}/unit:
     get:
       tags:
@@ -231,7 +231,7 @@ paths:
         - $ref: '#/parameters/code'
           name: games
         - $ref: '#/parameters/baseDate'
-          name: start          
+          name: start
         - $ref: '#/parameters/baseDate'
           name: end
         - $ref: '#/parameters/code'
@@ -242,7 +242,7 @@ paths:
           name: organisation
           in: query
           required: false
-        - $ref: '#/parameters/limit'  
+        - $ref: '#/parameters/limit'
       responses:
         200:
           description: Unit Collection, we need to add schedule helpers to look up by single day. Start list for head to head events needs adding.
@@ -569,7 +569,7 @@ paths:
                           }
                         ]
                       }]
-                    }   
+                    }
 
   /games/{games}/unit/{unit}:
     get:
@@ -685,13 +685,13 @@ paths:
                   "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                 }
               ]
-            }  
+            }
 
   /games/{games}/unit/{unit}/result:
     get:
       tags:
         - Unit
-      description: Returns the Results for a unit. 
+      description: Returns the Results for a unit.
       operationId: getUnitResults
       security:
         - apikey: []
@@ -819,7 +819,7 @@ paths:
 
   #
   # Event Collections
-  # 
+  #
   /games/{games}/event/{event}:
     get:
       tags:
@@ -1011,7 +1011,7 @@ paths:
                                     "href": "http://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------/result"
                                   }
                                 ]
-                              } 
+                              }
 
   #
   # Phase Collections
@@ -1060,7 +1060,7 @@ paths:
                       "gender": {
                         "code": "M",
                         "description": "Male"
-                      },          
+                      },
                       "link": [
                         {
                           "rel": "self",
@@ -1071,7 +1071,7 @@ paths:
                           "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                         }
                       ]
-                    } 
+                    }
 
   /games/{games}/phase/{phase}/result:
     get:
@@ -1174,7 +1174,7 @@ paths:
                               }
                             }]
                           }
-                        }],          
+                        }],
                         "link": [
                           {
                             "rel": "self",
@@ -1186,11 +1186,11 @@ paths:
                           }
                         ]
                       }
-                      
+
   #
   # Venue Resource
-  # 
-            
+  #
+
   /games/{games}/venue:
     get:
       tags:
@@ -1227,8 +1227,8 @@ paths:
                             "competition": true
                           }
                         }]
-                      }                    
-  
+                      }
+
   /games/{games}/venue/{venue}:
     get:
       tags:
@@ -1256,11 +1256,11 @@ paths:
                 "competition": true
               }
             }
-      
+
   #
   # Participant Resource
-  # 
-            
+  #
+
   /games/{games}/participant:
     get:
       tags:
@@ -1309,8 +1309,8 @@ paths:
                             "description": "Latvia"
                           }
                         }]
-                      }                    
-  
+                      }
+
   /games/{games}/participant/{participant}:
     get:
       tags:
@@ -1344,10 +1344,10 @@ paths:
                   "description": "Islamic Rep. of Iran"
                 }
               }
-            
+
   #
   # Medal Table Collections
-  # 
+  #
 
   /games/{games}/medal-table:
     get:
