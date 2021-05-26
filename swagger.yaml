@@ -1266,7 +1266,7 @@ paths:
       tags:
         - Participant
       description: Returns a list of participants for a games.
-      operationId: getParticipant
+      operationId: listParticipant
       security:
         - apikey: []
       parameters:
@@ -1316,7 +1316,7 @@ paths:
       tags:
         - Participant
       description: Returns the detail of a Participant for a games.
-      operationId: getVenue
+      operationId: getParticipant
       security:
         - apikey: []
       parameters:
