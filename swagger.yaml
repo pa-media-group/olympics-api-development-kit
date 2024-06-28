@@ -314,19 +314,19 @@ paths:
                 ],
                 "link": [{
                   "rel": "self",
-                  "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/SBDMBA----------------------------"
                 },
                   {
                     "rel": "result",
-                    "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
+                    "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
                   },
                   {
                     "rel": "phase",
-                    "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
+                    "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------"
                   },
                   {
                     "rel": "phase-result",
-                    "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
+                    "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                   }
                 ]
               },
@@ -379,19 +379,19 @@ paths:
                   "link": [
                     {
                       "rel": "self",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/BTH-------------------------------"
                     },
                     {
                       "rel": "result",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------/result"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/BTH-------------------------------/result"
                     },
                     {
                       "rel": "phase",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/BTH-----------------------"
                     },
                     {
                       "rel": "phase-result",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------/result"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/BTH-----------------------/result"
                     }
                   ]
                 },
@@ -444,19 +444,19 @@ paths:
                   "link": [
                     {
                       "rel": "self",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/FSK-------------------------------"
                     },
                     {
                       "rel": "result",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/FSK-------------------------------/result"
                     },
                     {
                       "rel": "phase",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/FSK-----------------------"
                     },
                     {
                       "rel": "phase-result",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/FSK-----------------------/result"
                     }
                   ]
                 },
@@ -537,19 +537,19 @@ paths:
                   "link": [
                     {
                       "rel": "self",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/FSK-------------------------------"
                     },
                     {
                       "rel": "result",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/FSK-------------------------------/result"
                     },
                     {
                       "rel": "phase",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/FSK-----------------------"
                     },
                     {
                       "rel": "phase-result",
-                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
+                      "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/FSK-----------------------/result"
                     }
                   ]
                 }]
@@ -652,19 +652,19 @@ paths:
               "link": [
                 {
                   "rel": "self",
-                  "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/SBDMBA----------------------------"
                 },
                 {
                   "rel": "result",
-                  "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
                 },
                 {
                   "rel": "phase",
-                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------"
                 },
                 {
                   "rel": "phase-result",
-                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                 }
               ]
             }
@@ -834,11 +834,11 @@ paths:
               link: [
                 {
                   rel: "self",
-                  href: "https://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
+                  href: "https://olympics.api.pamedia.io/v3/games/OWG2018/event/SBDMBA----------------------------"
                 },
                 {
                   rel: "event-result",
-                  href: "https://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/result"
+                  href: "https://olympics.api.pamedia.io/v3/games/OWG2018/event/SBDMBA----------------------------/result"
                 }
               ]
             }
@@ -1038,11 +1038,11 @@ paths:
               "link": [
                 {
                   "rel": "self",
-                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------"
                 },
                 {
                   "rel": "phase-result",
-                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                 }
               ]
             }
