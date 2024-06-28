@@ -43,25 +43,25 @@ paths:
             type: object
           examples:
             application/json: {
-                        total: 4,
-                        item: [{
-                            code: 'OWG2018',
-                            description: 'Olympic Winter Games PyeongChang 2018'
-                          },
-                          {
-                            code: 'PWG2018',
-                            description: 'Paralympic Winter Games PyeongChang 2018'
-                          },
-                          {
-                            code: 'CG2018',
-                            description: 'Commonwealth Games Gold Coast 2018 '
-                          },
-                          {
-                            code: 'OCOG2020',
-                            description: 'Olympic Games Tokyo 2020'
-                          }
-                        ]
-                      }
+              total: 4,
+              item: [{
+                code: 'OWG2018',
+                description: 'Olympic Winter Games PyeongChang 2018'
+              },
+                {
+                  code: 'PWG2018',
+                  description: 'Paralympic Winter Games PyeongChang 2018'
+                },
+                {
+                  code: 'CG2018',
+                  description: 'Commonwealth Games Gold Coast 2018 '
+                },
+                {
+                  code: 'OG2020',
+                  description: 'Olympic Games Tokyo 2020'
+                }
+              ]
+            }
 
   /games/{games}:
     get:
@@ -72,8 +72,7 @@ paths:
       security:
         - apikey: []
       parameters:
-        - $ref: '#/parameters/code'
-          name: games
+        - $ref: '#/parameters/games'
       responses:
         200:
           description: Games Detail
@@ -81,9 +80,9 @@ paths:
             type: object
           examples:
             application/json: {
-                code: 'OCOG2020',
-                description: 'Olympic Games Tokyo 2020'
-              }
+              code: 'OG2020',
+              description: 'Olympic Games Tokyo 2020'
+            }
 
   #
   # Discipline Resource
@@ -97,8 +96,7 @@ paths:
       security:
         - apikey: []
       parameters:
-        - $ref: '#/parameters/code'
-          name: games
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/limit'
       responses:
         200:
@@ -107,23 +105,23 @@ paths:
             type: object
           examples:
             application/json: {
-                        total: 3,
-                        item: [{
-                            code: 'ALP',
-                            description: 'Alpine Skiing'
-                          },
-                          {
-                            code: 'ART',
-                            description: 'Cultural Olympiad'
-                          },
-                          {
-                            code: 'BOB',
-                            description: 'Bobsleigh'
-                          }
-                        ]
-                      }
+              total: 3,
+              item: [{
+                code: 'ALP',
+                description: 'Alpine Skiing'
+              },
+                {
+                  code: 'ART',
+                  description: 'Cultural Olympiad'
+                },
+                {
+                  code: 'BOB',
+                  description: 'Bobsleigh'
+                }
+              ]
+            }
 
-  /games/{games}/discipline/{discipline}:
+  /games/{games}/discipline/{code}:
     get:
       tags:
         - Discipline
@@ -132,10 +130,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: discipline
       responses:
         200:
           description: Discipline Detail
@@ -143,21 +139,21 @@ paths:
             type: object
           examples:
             application/json: {
-                code: 'BOB',
-                description: 'Bobsleigh',
-                sport: {
-                  code: "BS",
-                  description: "Bobsleigh"
-                },
-                games: {
-                  code: 'OWG2018',
-                  description: 'Olympic Winter Games PyeongChang 2018'
-                },
-                meta: {
-                  scheduled: true,
-                  nonSport: true
-                }
+              code: 'BOB',
+              description: 'Bobsleigh',
+              sport: {
+                code: "BS",
+                description: "Bobsleigh"
+              },
+              games: {
+                code: 'OWG2018',
+                description: 'Olympic Winter Games PyeongChang 2018'
+              },
+              meta: {
+                scheduled: true,
+                nonSport: true
               }
+            }
 
   #
   # Organisation Collections
@@ -171,8 +167,7 @@ paths:
       security:
         - apikey: []
       parameters:
-        - $ref: '#/parameters/code'
-          name: games
+        - $ref: '#/parameters/games'
       responses:
         200:
           description: Organisation Collection
@@ -180,31 +175,29 @@ paths:
             type: object
           examples:
             application/json: {
-                        total: 2,
-                        item: [{
-                            code: 'GBR',
-                            description: 'Great Britain'
-                          },
-                          {
-                            code: 'ALG',
-                            description: 'Algeria'
-                          }
-                        ]
-                      }
+              total: 2,
+              item: [{
+                code: 'GBR',
+                description: 'Great Britain'
+              },
+                {
+                  code: 'ALG',
+                  description: 'Algeria'
+                }
+              ]
+            }
 
-  /games/{games}/organisation/{organisation}:
+  /games/{games}/organisation/{code}:
     get:
       tags:
         - Organisation
       description: Returns the detail of a organisation for a games.
-      operationId: listOrganityposationByGames
+      operationId: getOrganisationByGames
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: organisation
       responses:
         200:
           description: Organisation Detail
@@ -228,20 +221,11 @@ paths:
       security:
         - apikey: []
       parameters:
-        - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/baseDate'
-          name: start
-        - $ref: '#/parameters/baseDate'
-          name: end
-        - $ref: '#/parameters/code'
-          name: discipline
-          in: query
-          required: false
-        - $ref: '#/parameters/code'
-          name: organisation
-          in: query
-          required: false
+        - $ref: '#/parameters/games'
+        - $ref: '#/parameters/start'
+        - $ref: '#/parameters/end'
+        - $ref: '#/parameters/discipline'
+        - $ref: '#/parameters/organisation'
         - $ref: '#/parameters/limit'
       responses:
         200:
@@ -250,328 +234,328 @@ paths:
             type: object
           examples:
             application/json: {
-                        total: 4,
-                        item: [{
-                          "code": "SBDMBA-------------------------100",
-                          "description": "Ladies' Downhill Run 1",
-                          "start": "2016-11-25T09:45:00Z",
-                          "end": "2016-11-26T14:20:00Z",
-                          "meta": {
-                            "medal": "none"
-                          },
-                          "type": {
-                            "code": "ATH",
-                            "description": "Individuals"
-                          },
-                          "scheduleStatus": {
-                            "code": "DELAYED",
-                            "description": "Delayed",
-                            "notes": "Competition has not started and start is late (no new time)"
-                          },
-                          "phaseType": {
-                            "code": "0",
-                            "description": "Technical Meeting"
-                          },
-                          "venue": {
-                            "code": "ASJ",
-                            "description": "Alpensia Ski Jumping Ctr",
-                            "city": "Gangneung"
-                          },
-                          "games": {
-                            "code": "OWG2018",
-                            "description": "Olympic Winter Games PyeongChang 2018"
-                          },
-                          "discipline": {
-                            "code": "ALP",
-                            "description": "Alpine Skiing"
-                          },
-                          "event": {
-                            "code": "ALPWDH------09110-----",
-                            "description": "Women's Downhill, Standing",
-                            "meta": {
-                              "teamEvent": true
-                            }
-                          },
-                          "gender": {
-                            "code": "M",
-                            "description": "Male"
-                          },
-                          "phase": {
-                            "code": "ALPMAC----------------FNL-",
-                            "description": "Men's Alpine Combined"
-                          },
-                          "entrant": [
-                              {
-                                  "startOrder": 2,
-                                  "sortOrder": 2,
-                                  "competitor": {
-                                      "code": "CURXTEAM2---DEN01",
-                                      "description": "Denmark",
-                                      "type": "T",
-                                      "organisation": {
-                                          "code": "DEN",
-                                          "description": "Denmark"
-                                      }
-                                  }
-                              },
-                              {
-                                  "startOrder": 1,
-                                  "sortOrder": 1,
-                                  "competitor": {
-                                      "code": "CURXTEAM2---BEL01",
-                                      "description": "Belgium",
-                                      "type": "T",
-                                      "organisation": {
-                                          "code": "BEL",
-                                          "description": "Belgium"
-                                      }
-                                  }
-                              }
-                          ],
-                          "link": [{
-                              "rel": "self",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
-                            },
-                            {
-                              "rel": "result",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
-                            },
-                            {
-                              "rel": "phase",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
-                            },
-                            {
-                              "rel": "phase-result",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
-                            }
-                          ]
-                        },
-                        {
-                          "code": "BTH----------------------------200",
-                          "description": "Men's 7.5km - Standing",
-                          "start": "2016-11-26T10:45:00Z",
-                          "end": "2016-11-27T13:20:00Z",
-                          "meta": {
-                            "medal": "none"
-                          },
-                          "type": {
-                            "code": "ATH",
-                            "description": "Individuals"
-                          },
-                          "scheduleStatus": {
-                            "code": "SCHEDULED",
-                            "description": "Scheduled",
-                            "notes": "Competition has not started and start is late (no new time)"
-                          },
-                          "phaseType": {
-                            "code": "3",
-                            "description": "Competition"
-                          },
-                          "venue": {
-                            "code": "ABT",
-                            "description": "Alpensia Biathlon Centre",
-                            "city": "PyeongChang"
-                          },
-                          "games": {
-                            "code": "OWG2018",
-                            "description": "Olympic Winter Games PyeongChang 2018"
-                          },
-                          "discipline": {
-                            "code": "BTH",
-                            "description": "Biathlon"
-                          },
-                          "event": {
-                            "code": "7.5KM---09070-----",
-                            "description": "Men's 7.5km - Standing"
-                          },
-                          "gender": {
-                            "code": "M",
-                            "description": "Male"
-                          },
-                          "phase": {
-                            "code": "BTHM----------------------",
-                            "description": "Men's Biathlon"
-                          },
-                          "link": [
-                            {
-                              "rel": "self",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------"
-                            },
-                            {
-                              "rel": "result",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------/result"
-                            },
-                            {
-                              "rel": "phase",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------"
-                            },
-                            {
-                              "rel": "phase-result",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------/result"
-                            }
-                          ]
-                        },
-                        {
-                          "code": "FSK----------------------------300",
-                          "description": "Pair Skating",
-                          "start": "2016-11-26T09:45:00Z",
-                          "end": "2016-11-27T14:20:00Z",
-                          "meta": {
-                            "medal": "gold"
-                          },
-                          "type": {
-                            "code": "ATH",
-                            "description": "Individuals"
-                          },
-                          "scheduleStatus": {
-                            "code": "FINISHED",
-                            "description": "Finished",
-                            "notes": "All play is complete in the unit"
-                          },
-                          "phaseType": {
-                            "code": "3",
-                            "description": "Competition"
-                          },
-                          "venue": {
-                            "code": "GIA",
-                            "description": "Gangneung Ice Arena",
-                            "city": "PyeongChang"
-                          },
-                          "games": {
-                            "code": "OWG2018",
-                            "description": "Olympic Winter Games PyeongChang 2018"
-                          },
-                          "discipline": {
-                            "code": "FSK",
-                            "description": "Figure Skating"
-                          },
-                          "event": {
-                            "code": "PAIRS-------------",
-                            "description": "Pair Skating"
-                          },
-                          "gender": {
-                            "code": "X",
-                            "description": "Mixed"
-                          },
-                          "phase": {
-                            "code": "FSKXPAIRS-------------FNL-",
-                            "description": "Pair Skating"
-                          },
-                          "link": [
-                            {
-                              "rel": "self",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
-                            },
-                            {
-                              "rel": "result",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
-                            },
-                            {
-                              "rel": "phase",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
-                            },
-                            {
-                              "rel": "phase-result",
-                              "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
-                            }
-                          ]
-                        },
-                        {
-                          "code": "FSK----------------------------400",
-                          "description": "Pair Skating",
-                          "start": "2016-11-26T14:45:00Z",
-                          "end": "2016-11-27T16:20:00Z",
-                          "meta": {
-                            "medal": "bronze"
-                          },
-                          "type": {
-                            "code": "ATH",
-                            "description": "Individuals"
-                          },
-                          "scheduleStatus": {
-                            "code": "RUNNING",
-                            "description": "Running",
-                            "notes": "Competition in progress"
-                          },
-                          "phaseType": {
-                            "code": "3",
-                            "description": "Competition"
-                          },
-                          "venue": {
-                            "code": "GIA",
-                            "description": "Gangneung Ice Arena",
-                            "city": "Gangneung"
-                          },
-                          "games": {
-                            "code": "OWG2018",
-                            "description": "Olympic Winter Games PyeongChang 2018"
-                          },
-                          "discipline": {
-                            "code": "FSK",
-                            "description": "Figure Skating"
-                          },
-                          "event": {
-                            "code": "PAIRS-------------",
-                            "description": "Pair Skating"
-                          },
-                          "gender": {
-                            "code": "X",
-                            "description": "Mixed"
-                          },
-                          "phase": {
-                            "code": "FSKXPAIRS-------------FNL-",
-                            "description": "Pair Skating"
-                          },
-                          "entrant": [
-                            {
-                                "startOrder": 2,
-                                "sortOrder": 2,
-                                "competitor": {
-                                    "code": "CURXTEAM2---DEN01",
-                                    "description": "Denmark",
-                                    "type": "T",
-                                    "organisation": {
-                                        "code": "DEN",
-                                        "description": "Denmark"
-                                    }
-                                }
-                            },
-                            {
-                                "startOrder": 1,
-                                "sortOrder": 1,
-                                "competitor": {
-                                    "code": "CURXTEAM2---BEL01",
-                                    "description": "Belgium",
-                                    "type": "T",
-                                    "organisation": {
-                                        "code": "BEL",
-                                        "description": "Belgium"
-                                    }
-                                }
-                            }
-                        ],
-                        "link": [
-                          {
-                            "rel": "self",
-                            "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
-                          },
-                          {
-                            "rel": "result",
-                            "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
-                          },
-                          {
-                            "rel": "phase",
-                            "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
-                          },
-                          {
-                            "rel": "phase-result",
-                            "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
-                          }
-                        ]
-                      }]
+              total: 4,
+              item: [{
+                "code": "SBDMBA-------------------------100",
+                "description": "Ladies' Downhill Run 1",
+                "start": "2016-11-25T09:45:00Z",
+                "end": "2016-11-26T14:20:00Z",
+                "meta": {
+                  "medal": "none"
+                },
+                "type": {
+                  "code": "ATH",
+                  "description": "Individuals"
+                },
+                "scheduleStatus": {
+                  "code": "DELAYED",
+                  "description": "Delayed",
+                  "notes": "Competition has not started and start is late (no new time)"
+                },
+                "phaseType": {
+                  "code": "0",
+                  "description": "Technical Meeting"
+                },
+                "venue": {
+                  "code": "ASJ",
+                  "description": "Alpensia Ski Jumping Ctr",
+                  "city": "Gangneung"
+                },
+                "games": {
+                  "code": "OWG2018",
+                  "description": "Olympic Winter Games PyeongChang 2018"
+                },
+                "discipline": {
+                  "code": "ALP",
+                  "description": "Alpine Skiing"
+                },
+                "event": {
+                  "code": "ALPWDH------09110-----",
+                  "description": "Women's Downhill, Standing",
+                  "meta": {
+                    "teamEvent": true
+                  }
+                },
+                "gender": {
+                  "code": "M",
+                  "description": "Male"
+                },
+                "phase": {
+                  "code": "ALPMAC----------------FNL-",
+                  "description": "Men's Alpine Combined"
+                },
+                "entrant": [
+                  {
+                    "startOrder": 2,
+                    "sortOrder": 2,
+                    "competitor": {
+                      "code": "CURXTEAM2---DEN01",
+                      "description": "Denmark",
+                      "type": "T",
+                      "organisation": {
+                        "code": "DEN",
+                        "description": "Denmark"
+                      }
                     }
+                  },
+                  {
+                    "startOrder": 1,
+                    "sortOrder": 1,
+                    "competitor": {
+                      "code": "CURXTEAM2---BEL01",
+                      "description": "Belgium",
+                      "type": "T",
+                      "organisation": {
+                        "code": "BEL",
+                        "description": "Belgium"
+                      }
+                    }
+                  }
+                ],
+                "link": [{
+                  "rel": "self",
+                  "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
+                },
+                  {
+                    "rel": "result",
+                    "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
+                  },
+                  {
+                    "rel": "phase",
+                    "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
+                  },
+                  {
+                    "rel": "phase-result",
+                    "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
+                  }
+                ]
+              },
+                {
+                  "code": "BTH----------------------------200",
+                  "description": "Men's 7.5km - Standing",
+                  "start": "2016-11-26T10:45:00Z",
+                  "end": "2016-11-27T13:20:00Z",
+                  "meta": {
+                    "medal": "none"
+                  },
+                  "type": {
+                    "code": "ATH",
+                    "description": "Individuals"
+                  },
+                  "scheduleStatus": {
+                    "code": "SCHEDULED",
+                    "description": "Scheduled",
+                    "notes": "Competition has not started and start is late (no new time)"
+                  },
+                  "phaseType": {
+                    "code": "3",
+                    "description": "Competition"
+                  },
+                  "venue": {
+                    "code": "ABT",
+                    "description": "Alpensia Biathlon Centre",
+                    "city": "PyeongChang"
+                  },
+                  "games": {
+                    "code": "OWG2018",
+                    "description": "Olympic Winter Games PyeongChang 2018"
+                  },
+                  "discipline": {
+                    "code": "BTH",
+                    "description": "Biathlon"
+                  },
+                  "event": {
+                    "code": "7.5KM---09070-----",
+                    "description": "Men's 7.5km - Standing"
+                  },
+                  "gender": {
+                    "code": "M",
+                    "description": "Male"
+                  },
+                  "phase": {
+                    "code": "BTHM----------------------",
+                    "description": "Men's Biathlon"
+                  },
+                  "link": [
+                    {
+                      "rel": "self",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------"
+                    },
+                    {
+                      "rel": "result",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/BTH-------------------------------/result"
+                    },
+                    {
+                      "rel": "phase",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------"
+                    },
+                    {
+                      "rel": "phase-result",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/BTH-----------------------/result"
+                    }
+                  ]
+                },
+                {
+                  "code": "FSK----------------------------300",
+                  "description": "Pair Skating",
+                  "start": "2016-11-26T09:45:00Z",
+                  "end": "2016-11-27T14:20:00Z",
+                  "meta": {
+                    "medal": "gold"
+                  },
+                  "type": {
+                    "code": "ATH",
+                    "description": "Individuals"
+                  },
+                  "scheduleStatus": {
+                    "code": "FINISHED",
+                    "description": "Finished",
+                    "notes": "All play is complete in the unit"
+                  },
+                  "phaseType": {
+                    "code": "3",
+                    "description": "Competition"
+                  },
+                  "venue": {
+                    "code": "GIA",
+                    "description": "Gangneung Ice Arena",
+                    "city": "PyeongChang"
+                  },
+                  "games": {
+                    "code": "OWG2018",
+                    "description": "Olympic Winter Games PyeongChang 2018"
+                  },
+                  "discipline": {
+                    "code": "FSK",
+                    "description": "Figure Skating"
+                  },
+                  "event": {
+                    "code": "PAIRS-------------",
+                    "description": "Pair Skating"
+                  },
+                  "gender": {
+                    "code": "X",
+                    "description": "Mixed"
+                  },
+                  "phase": {
+                    "code": "FSKXPAIRS-------------FNL-",
+                    "description": "Pair Skating"
+                  },
+                  "link": [
+                    {
+                      "rel": "self",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                    },
+                    {
+                      "rel": "result",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
+                    },
+                    {
+                      "rel": "phase",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
+                    },
+                    {
+                      "rel": "phase-result",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
+                    }
+                  ]
+                },
+                {
+                  "code": "FSK----------------------------400",
+                  "description": "Pair Skating",
+                  "start": "2016-11-26T14:45:00Z",
+                  "end": "2016-11-27T16:20:00Z",
+                  "meta": {
+                    "medal": "bronze"
+                  },
+                  "type": {
+                    "code": "ATH",
+                    "description": "Individuals"
+                  },
+                  "scheduleStatus": {
+                    "code": "RUNNING",
+                    "description": "Running",
+                    "notes": "Competition in progress"
+                  },
+                  "phaseType": {
+                    "code": "3",
+                    "description": "Competition"
+                  },
+                  "venue": {
+                    "code": "GIA",
+                    "description": "Gangneung Ice Arena",
+                    "city": "Gangneung"
+                  },
+                  "games": {
+                    "code": "OWG2018",
+                    "description": "Olympic Winter Games PyeongChang 2018"
+                  },
+                  "discipline": {
+                    "code": "FSK",
+                    "description": "Figure Skating"
+                  },
+                  "event": {
+                    "code": "PAIRS-------------",
+                    "description": "Pair Skating"
+                  },
+                  "gender": {
+                    "code": "X",
+                    "description": "Mixed"
+                  },
+                  "phase": {
+                    "code": "FSKXPAIRS-------------FNL-",
+                    "description": "Pair Skating"
+                  },
+                  "entrant": [
+                    {
+                      "startOrder": 2,
+                      "sortOrder": 2,
+                      "competitor": {
+                        "code": "CURXTEAM2---DEN01",
+                        "description": "Denmark",
+                        "type": "T",
+                        "organisation": {
+                          "code": "DEN",
+                          "description": "Denmark"
+                        }
+                      }
+                    },
+                    {
+                      "startOrder": 1,
+                      "sortOrder": 1,
+                      "competitor": {
+                        "code": "CURXTEAM2---BEL01",
+                        "description": "Belgium",
+                        "type": "T",
+                        "organisation": {
+                          "code": "BEL",
+                          "description": "Belgium"
+                        }
+                      }
+                    }
+                  ],
+                  "link": [
+                    {
+                      "rel": "self",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------"
+                    },
+                    {
+                      "rel": "result",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/FSK-------------------------------/result"
+                    },
+                    {
+                      "rel": "phase",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------"
+                    },
+                    {
+                      "rel": "phase-result",
+                      "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/FSK-----------------------/result"
+                    }
+                  ]
+                }]
+            }
 
-  /games/{games}/unit/{unit}:
+  /games/{games}/unit/{code}:
     get:
       tags:
         - Unit
@@ -580,10 +564,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: unit
       responses:
         200:
           description: Unit Detail
@@ -640,54 +622,54 @@ paths:
                 "description": "Men's Alpine Combined"
               },
               "entrant": [
-                  {
-                      "startOrder": 2,
-                      "sortOrder": 2,
-                      "competitor": {
-                          "code": "CURXTEAM2---DEN01",
-                          "description": "Denmark",
-                          "type": "T",
-                          "organisation": {
-                              "code": "DEN",
-                              "description": "Denmark"
-                          }
-                      }
-                  },
-                  {
-                      "startOrder": 1,
-                      "sortOrder": 1,
-                      "competitor": {
-                          "code": "CURXTEAM2---BEL01",
-                          "description": "Belgium",
-                          "type": "T",
-                          "organisation": {
-                              "code": "BEL",
-                              "description": "Belgium"
-                          }
-                      }
+                {
+                  "startOrder": 2,
+                  "sortOrder": 2,
+                  "competitor": {
+                    "code": "CURXTEAM2---DEN01",
+                    "description": "Denmark",
+                    "type": "T",
+                    "organisation": {
+                      "code": "DEN",
+                      "description": "Denmark"
+                    }
                   }
+                },
+                {
+                  "startOrder": 1,
+                  "sortOrder": 1,
+                  "competitor": {
+                    "code": "CURXTEAM2---BEL01",
+                    "description": "Belgium",
+                    "type": "T",
+                    "organisation": {
+                      "code": "BEL",
+                      "description": "Belgium"
+                    }
+                  }
+                }
               ],
               "link": [
                 {
                   "rel": "self",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
+                  "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------"
                 },
                 {
                   "rel": "result",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
+                  "href": "https://olympics.api.press.net/v3/games/OWG2018/unit/SBDMBA----------------------------/result"
                 },
                 {
                   "rel": "phase",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
+                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
                 },
                 {
                   "rel": "phase-result",
-                  "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
+                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                 }
               ]
             }
 
-  /games/{games}/unit/{unit}/result:
+  /games/{games}/unit/{code}/result:
     get:
       tags:
         - Unit
@@ -696,10 +678,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: unit
       responses:
         200:
           description: Unit Results Detail
@@ -707,120 +687,120 @@ paths:
             type: object
           examples:
             application/json: {
-                      "code": "SBDMBA----------------------------",
-                      "description": "Ladies' Downhill Run 1",
-                      "start": "2016-11-25T09:45:00Z",
-                      "end": "2016-11-26T14:20:00Z",
+              "code": "SBDMBA----------------------------",
+              "description": "Ladies' Downhill Run 1",
+              "start": "2016-11-25T09:45:00Z",
+              "end": "2016-11-26T14:20:00Z",
+              "meta": {
+                "medal": "none"
+              },
+              "resultStatus":{
+                "code": "LIVE",
+                "description": "Live"
+              },
+              "type": {
+                "code": "ATH",
+                "description": "Individuals"
+              },
+              "scheduleStatus": {
+                "code": "SCHEDULED",
+                "description": "Delayed",
+                "notes": "Competition has not started and start is late (no new time)"
+              },
+              "phaseType": {
+                "code": "0",
+                "description": "Technical Meeting"
+              },
+              "venue": {
+                "code": "ASJ",
+                "description": "Alpensia Ski Jumping Ctr",
+                "city": "PyeongChang"
+              },
+              "games": {
+                "code": "OWG2018",
+                "description": "Olympic Winter Games PyeongChang 2018"
+              },
+              "discipline": {
+                "code": "ALP",
+                "description": "Alpine Skiing"
+              },
+              "event": {
+                "code": "ALPWDH------09110-----",
+                "description": "Women's Downhill, Standing",
+                "meta": {
+                  "teamEvent": true
+                }
+              },
+              "gender": {
+                "code": "M",
+                "description": "Male"
+              },
+              "phase": {
+                "code": "ALPMAC----------------FNL-",
+                "description": "Men's Alpine Combined"
+              },
+              "result": [
+                {
+                  "rank": 1,
+                  "value": "50.53",
+                  "valueType": "TIME",
+                  "sortOrder": 1,
+                  "startOrder": 1,
+                  "startSortOrder": 1,
+                  "diff": "0.00",
+                  "medal": "gold",
+                  "invalidResultMark": {
+                    "code": "DSQ",
+                    "description": "Disqualified"
+                  },
+                  "qualificationMark": {
+                    "code": "QT",
+                    "description": "Qualified by Time"
+                  },
+                  "wonLostTied": {
+                    "code": "T",
+                    "description": "Team / Athlete tied"
+                  },
+                  "meta": {
+                    "unchecked": true,
+                    "rankEqual": ""
+                  },
+                  "competitor": {
+                    "code": "BOBOTEAM4------USA01",
+                    "type": "T",
+                    "bib": "12",
+                    "organisation": {
+                      "code": "USA",
+                      "description": "USA"
+                    },
+                    "team": {
+                      "name": "USA"
+                    },
+                    "athlete": {
+                      "givenName": "",
+                      "familyName": "",
+                      "dob": "",
                       "meta": {
-                        "medal": "none"
-                      },
-                      "resultStatus":{
-                        "code": "LIVE",
-                        "description": "Live"
-                      },
-                      "type": {
-                        "code": "ATH",
-                        "description": "Individuals"
-                      },
-                      "scheduleStatus": {
-                        "code": "SCHEDULED",
-                        "description": "Delayed",
-                        "notes": "Competition has not started and start is late (no new time)"
-                      },
-                      "phaseType": {
-                        "code": "0",
-                        "description": "Technical Meeting"
-                      },
-                      "venue": {
-                        "code": "ASJ",
-                        "description": "Alpensia Ski Jumping Ctr",
-                        "city": "PyeongChang"
-                      },
-                      "games": {
-                        "code": "OWG2018",
-                        "description": "Olympic Winter Games PyeongChang 2018"
-                      },
-                      "discipline": {
-                        "code": "ALP",
-                        "description": "Alpine Skiing"
-                      },
-                      "event": {
-                        "code": "ALPWDH------09110-----",
-                        "description": "Women's Downhill, Standing",
-                        "meta": {
-                          "teamEvent": true
-                        }
+                        "class": ""
                       },
                       "gender": {
                         "code": "M",
                         "description": "Male"
                       },
-                      "phase": {
-                        "code": "ALPMAC----------------FNL-",
-                        "description": "Men's Alpine Combined"
-                      },
-                      "result": [
-                        {
-                          "rank": 1,
-                          "value": "50.53",
-                          "valueType": "TIME",
-                          "sortOrder": 1,
-                          "startOrder": 1,
-                          "startSortOrder": 1,
-                          "diff": "0.00",
-                          "medal": "gold",
-                          "invalidResultMark": {
-                            "code": "DSQ",
-                            "description": "Disqualified"
-                          },
-                          "qualificationMark": {
-                            "code": "QT",
-                            "description": "Qualified by Time"
-                          },
-                          "wonLostTied": {
-                            "code": "T",
-                            "description": "Team / Athlete tied"
-                          },
-                          "meta": {
-                            "unchecked": true,
-                            "rankEqual": ""
-                          },
-                          "competitor": {
-                            "code": "BOBOTEAM4------USA01",
-                            "type": "T",
-                            "bib": "12",
-                            "organisation": {
-                              "code": "USA",
-                              "description": "USA"
-                            },
-                            "team": {
-                              "name": "USA"
-                            },
-                            "athlete": {
-                              "givenName": "",
-                              "familyName": "",
-                              "dob": "",
-                              "meta": {
-                                "class": ""
-                              },
-                              "gender": {
-                                "code": "M",
-                                "description": "Male"
-                              },
-                              "organisation": {
-                                "code": "USA",
-                                "description": "USA"
-                              }
-                            }
-                          }
-                        }
-                      ]
+                      "organisation": {
+                        "code": "USA",
+                        "description": "USA"
+                      }
                     }
+                  }
+                }
+              ]
+            }
 
   #
   # Event Collections
   #
-  /games/{games}/event/{event}:
+  /games/{games}/event/{code}:
     get:
       tags:
         - Event
@@ -829,10 +809,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: event
       responses:
         200:
           description: Event Detail
@@ -840,32 +818,32 @@ paths:
             type: object
           examples:
             application/json: {
-                code: 'ALPMDH----------------',
-                description: "Men's Downhill",
-                discipline: {
-                  code: 'ALP',
-                  description: 'Alpine Skiing'
+              code: 'ALPMDH----------------',
+              description: "Men's Downhill",
+              discipline: {
+                code: 'ALP',
+                description: 'Alpine Skiing'
+              },
+              gender: {
+                code: 'M',
+                description: 'Men'
+              },
+              meta: {
+                teamEvent: false
+              },
+              link: [
+                {
+                  rel: "self",
+                  href: "https://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
                 },
-                gender: {
-                  code: 'M',
-                  description: 'Men'
-                },
-                meta: {
-                  teamEvent: false
-                },
-                link: [
-                  {
-                    rel: "self",
-                    href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------"
-                  },
-                  {
-                    rel: "event-result",
-                    href: "http://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/result"
-                  }
-                ]
+                {
+                  rel: "event-result",
+                  href: "https://olympics.api.press.net/v3/games/OWG2018/event/SBDMBA----------------------------/result"
+                }
+              ]
             }
 
-  /games/{games}/event/{event}/result:
+  /games/{games}/event/{code}/result:
     get:
       tags:
         - Event
@@ -874,10 +852,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: event
       responses:
         200:
           description: Event Results Detail
@@ -885,138 +861,138 @@ paths:
             type: object
           examples:
             application/json: {
-                                "code": "ALPMSG----------------",
-                                "description": "Men's Super-G",
-                                "discipline": {
-                                  "code": "ALP",
-                                  "description": "Alpine Skiing"
-                                },
-                                "gender": {
-                                  "code": "M",
-                                  "description": "Men"
-                                },
-                                "games": {
-                                  "code": "OWG2018",
-                                  "description": "Olympic Winter Games PyeongChang 2018"
-                                },
-                                "result": [
-                                  {
-                                    "medal": "gold",
-                                    "rank": "1",
-                                    "sortOrder": 1,
-                                    "diff": "0.00",
-                                    "meta": {
-                                      "unchecked": false,
-                                      "rankEqual": false
-                                    },
-                                    "value": "1:43.21",
-                                    "valueType": {
-                                      "code": "TIME",
-                                      "description": "Time"
-                                    },
-                                    "competitor": {
-                                      "code": "7705302",
-                                      "type": "A",
-                                      "organisation": {
-                                        "code": "NOR",
-                                        "description": "Norway"
-                                      },
-                                      "athlete": [
-                                        {
-                                          "code": "7705302",
-                                          "order": 1,
-                                          "givenName": "Guro Haugo",
-                                          "familyName": "SKEIE",
-                                          "organisation": {
-                                            "code": "NOR",
-                                            "description": "Norway"
-                                          },
-                                          "gender": {
-                                            "code": "F",
-                                            "description": "Female"
-                                          },
-                                          "meta": {
-                                            "dob": "1997-07-07",
-                                            "bib": "7"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    "item": [
-                                      {
-                                        "rank": "1",
-                                        "sortOrder": 1,
-                                        "diff": "0.00",
-                                        "meta": {
-                                          "unchecked": false,
-                                          "rankEqual": false
-                                        },
-                                        "value": "49.68",
-                                        "valueType": {
-                                          "code": "TIME",
-                                          "description": "Time"
-                                        },
-                                        "unit": {
-                                          "code": "ALPWSL----------------FNL-000200--",
-                                          "description": "Ladies' Slalom Run 2",
-                                          "phase": {
-                                            "code": "ALPWSL----------------FNL-",
-                                            "description": "Ladies' Slalom",
-                                            "phaseType": {
-                                              "code": 3,
-                                              "description": "Competition"
-                                            }
-                                          }
-                                        }
-                                      },
-                                      {
-                                        "rank": "1",
-                                        "sortOrder": 1,
-                                        "diff": "0.00",
-                                        "meta": {
-                                          "unchecked": false,
-                                          "rankEqual": false
-                                        },
-                                        "value": "53.53",
-                                        "valueType": {
-                                          "code": "TIME",
-                                          "description": "Time"
-                                        },
-                                        "unit": {
-                                          "code": "ALPWSL----------------FNL-000100--",
-                                          "description": "Ladies' Slalom Run 1",
-                                          "phase": {
-                                            "code": "ALPWSL----------------FNL-",
-                                            "description": "Ladies' Slalom",
-                                            "phaseType": {
-                                              "code": 3,
-                                              "description": "Competition"
-                                            }
-                                          }
-                                        }
-                                      }
-                                    ]
-                                  }
-                                ],
-                                "meta": {
-                                  "teamEvent": false
-                                },
-                                "link": [
-                                  {
-                                    "rel": "event",
-                                    "href": "http://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------"
-                                  },
-                                  {
-                                    "rel": "self",
-                                    "href": "http://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------/result"
-                                  }
-                                ]
-                              }
+              "code": "ALPMSG----------------",
+              "description": "Men's Super-G",
+              "discipline": {
+                "code": "ALP",
+                "description": "Alpine Skiing"
+              },
+              "gender": {
+                "code": "M",
+                "description": "Men"
+              },
+              "games": {
+                "code": "OWG2018",
+                "description": "Olympic Winter Games PyeongChang 2018"
+              },
+              "result": [
+                {
+                  "medal": "gold",
+                  "rank": "1",
+                  "sortOrder": 1,
+                  "diff": "0.00",
+                  "meta": {
+                    "unchecked": false,
+                    "rankEqual": false
+                  },
+                  "value": "1:43.21",
+                  "valueType": {
+                    "code": "TIME",
+                    "description": "Time"
+                  },
+                  "competitor": {
+                    "code": "7705302",
+                    "type": "A",
+                    "organisation": {
+                      "code": "NOR",
+                      "description": "Norway"
+                    },
+                    "athlete": [
+                      {
+                        "code": "7705302",
+                        "order": 1,
+                        "givenName": "Guro Haugo",
+                        "familyName": "SKEIE",
+                        "organisation": {
+                          "code": "NOR",
+                          "description": "Norway"
+                        },
+                        "gender": {
+                          "code": "F",
+                          "description": "Female"
+                        },
+                        "meta": {
+                          "dob": "1997-07-07",
+                          "bib": "7"
+                        }
+                      }
+                    ]
+                  },
+                  "item": [
+                    {
+                      "rank": "1",
+                      "sortOrder": 1,
+                      "diff": "0.00",
+                      "meta": {
+                        "unchecked": false,
+                        "rankEqual": false
+                      },
+                      "value": "49.68",
+                      "valueType": {
+                        "code": "TIME",
+                        "description": "Time"
+                      },
+                      "unit": {
+                        "code": "ALPWSL----------------FNL-000200--",
+                        "description": "Ladies' Slalom Run 2",
+                        "phase": {
+                          "code": "ALPWSL----------------FNL-",
+                          "description": "Ladies' Slalom",
+                          "phaseType": {
+                            "code": 3,
+                            "description": "Competition"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "rank": "1",
+                      "sortOrder": 1,
+                      "diff": "0.00",
+                      "meta": {
+                        "unchecked": false,
+                        "rankEqual": false
+                      },
+                      "value": "53.53",
+                      "valueType": {
+                        "code": "TIME",
+                        "description": "Time"
+                      },
+                      "unit": {
+                        "code": "ALPWSL----------------FNL-000100--",
+                        "description": "Ladies' Slalom Run 1",
+                        "phase": {
+                          "code": "ALPWSL----------------FNL-",
+                          "description": "Ladies' Slalom",
+                          "phaseType": {
+                            "code": 3,
+                            "description": "Competition"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ],
+              "meta": {
+                "teamEvent": false
+              },
+              "link": [
+                {
+                  "rel": "event",
+                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------"
+                },
+                {
+                  "rel": "self",
+                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------/result"
+                }
+              ]
+            }
 
   #
   # Phase Collections
   #
-  /games/{games}/phase/{phase}:
+  /games/{games}/phase/{code}:
     get:
       tags:
         - Phase
@@ -1025,10 +1001,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: phase
       responses:
         200:
           description: Phase Detail
@@ -1036,44 +1010,44 @@ paths:
             type: object
           examples:
             application/json: {
-                      "code": "ALPMAC----------------FNL-",
-                      "description": "Men's Alpine Combined",
-                      "type": {
-                        "code": "0",
-                        "description": "Technical Meeting"
-                      },
-                      "games": {
-                        "code": "OWG2018",
-                        "description": "Olympic Winter Games PyeongChang 2018"
-                      },
-                      "discipline": {
-                        "code": "ALP",
-                        "description": "Alpine Skiing"
-                      },
-                      "event": {
-                        "code": "ALPWDH------09110-----",
-                        "description": "Women's Downhill, Standing",
-                        "meta": {
-                          "teamEvent": true
-                        }
-                      },
-                      "gender": {
-                        "code": "M",
-                        "description": "Male"
-                      },
-                      "link": [
-                        {
-                          "rel": "self",
-                          "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
-                        },
-                        {
-                          "rel": "phase-result",
-                          "href": "http://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
-                        }
-                      ]
-                    }
+              "code": "ALPMAC----------------FNL-",
+              "description": "Men's Alpine Combined",
+              "type": {
+                "code": "0",
+                "description": "Technical Meeting"
+              },
+              "games": {
+                "code": "OWG2018",
+                "description": "Olympic Winter Games PyeongChang 2018"
+              },
+              "discipline": {
+                "code": "ALP",
+                "description": "Alpine Skiing"
+              },
+              "event": {
+                "code": "ALPWDH------09110-----",
+                "description": "Women's Downhill, Standing",
+                "meta": {
+                  "teamEvent": true
+                }
+              },
+              "gender": {
+                "code": "M",
+                "description": "Male"
+              },
+              "link": [
+                {
+                  "rel": "self",
+                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------"
+                },
+                {
+                  "rel": "phase-result",
+                  "href": "https://olympics.api.press.net/v3/games/OWG2018/phase/SBDMBA--------------------/result"
+                }
+              ]
+            }
 
-  /games/{games}/phase/{phase}/result:
+  /games/{games}/phase/{code}/result:
     get:
       tags:
         - Phase
@@ -1082,10 +1056,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: phase
       responses:
         200:
           description: Event Phase Result Detail
@@ -1093,99 +1065,99 @@ paths:
             type: object
           examples:
             application/json: {
-                        "code": "ALPMAC----------------FNL-",
-                        "description": "Men's Alpine Combined",
-                        "type": {
-                          "code": "0",
-                          "description": "Technical Meeting"
-                        },
-                        "games": {
-                          "code": "OWG2018",
-                          "description": "Olympic Winter Games PyeongChang 2018"
-                        },
-                        "discipline": {
-                          "code": "ALP",
-                          "description": "Alpine Skiing"
-                        },
-                        "event": {
-                          "code": "ALPWDH------09110-----",
-                          "description": "Women's Downhill, Standing",
-                          "meta": {
-                            "teamEvent": true
-                          }
-                        },
-                        "gender": {
-                          "code": "M",
-                          "description": "Male"
-                        },
-                        "result": [{
-                          "rank": 1,
-                          "sortOrder": 1,
-                          "startOrder": 1,
-                          "startSortOrder": 1,
-                          "diff": "0.00",
-                          "value": "50.53",
-                          "medal": "gold",
-                          "valueType": {
-                            "code": "TIME",
-                            "description": "Time"
-                          },
-                          "invalidResultMark": {
-                            "code": "DSQ",
-                            "description": "Disqualified"
-                          },
-                          "qualificationMark": {
-                            "code": "QT",
-                            "description": "Qualified by Time"
-                          },
-                          "wonLostTied": {
-                            "code": "T",
-                            "description": "Team / Athlete tied"
-                          },
-                          "meta": {
-                            "unchecked": true,
-                            "rankEqual": false
-                          },
-                          "competitor": {
-                            "code": "BOBOTEAM4------USA01",
-                            "type": "T",
-                            "bib": "12",
-                            "organisation": {
-                              "code": "USA",
-                              "description": "USA"
-                            },
-                            "team": {
-                              "name": "USA"
-                            },
-                            "athlete": [{
-                              "givenName": "",
-                              "familyName": "",
-                              "dob": "",
-                              "meta": {
-                                "class": ""
-                              },
-                              "gender": {
-                                "code": "M",
-                                "description": "Male"
-                              },
-                              "organisation": {
-                                "code": "USA",
-                                "description": "USA"
-                              }
-                            }]
-                          }
-                        }],
-                        "link": [
-                          {
-                            "rel": "self",
-                            "href": "http://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------/result"
-                          },
-                          {
-                            "rel": "phase",
-                            "href": "http://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------"
-                          }
-                        ]
-                      }
+              "code": "ALPMAC----------------FNL-",
+              "description": "Men's Alpine Combined",
+              "type": {
+                "code": "0",
+                "description": "Technical Meeting"
+              },
+              "games": {
+                "code": "OWG2018",
+                "description": "Olympic Winter Games PyeongChang 2018"
+              },
+              "discipline": {
+                "code": "ALP",
+                "description": "Alpine Skiing"
+              },
+              "event": {
+                "code": "ALPWDH------09110-----",
+                "description": "Women's Downhill, Standing",
+                "meta": {
+                  "teamEvent": true
+                }
+              },
+              "gender": {
+                "code": "M",
+                "description": "Male"
+              },
+              "result": [{
+                "rank": 1,
+                "sortOrder": 1,
+                "startOrder": 1,
+                "startSortOrder": 1,
+                "diff": "0.00",
+                "value": "50.53",
+                "medal": "gold",
+                "valueType": {
+                  "code": "TIME",
+                  "description": "Time"
+                },
+                "invalidResultMark": {
+                  "code": "DSQ",
+                  "description": "Disqualified"
+                },
+                "qualificationMark": {
+                  "code": "QT",
+                  "description": "Qualified by Time"
+                },
+                "wonLostTied": {
+                  "code": "T",
+                  "description": "Team / Athlete tied"
+                },
+                "meta": {
+                  "unchecked": true,
+                  "rankEqual": false
+                },
+                "competitor": {
+                  "code": "BOBOTEAM4------USA01",
+                  "type": "T",
+                  "bib": "12",
+                  "organisation": {
+                    "code": "USA",
+                    "description": "USA"
+                  },
+                  "team": {
+                    "name": "USA"
+                  },
+                  "athlete": [{
+                    "givenName": "",
+                    "familyName": "",
+                    "dob": "",
+                    "meta": {
+                      "class": ""
+                    },
+                    "gender": {
+                      "code": "M",
+                      "description": "Male"
+                    },
+                    "organisation": {
+                      "code": "USA",
+                      "description": "USA"
+                    }
+                  }]
+                }
+              }],
+              "link": [
+                {
+                  "rel": "self",
+                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------/result"
+                },
+                {
+                  "rel": "phase",
+                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------"
+                }
+              ]
+            }
 
   #
   # Venue Resource
@@ -1200,8 +1172,7 @@ paths:
       security:
         - apikey: []
       parameters:
-        - $ref: '#/parameters/code'
-          name: games
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/limit'
       responses:
         200:
@@ -1210,26 +1181,26 @@ paths:
             type: object
           examples:
             application/json: {
-                        total: 2,
-                        item: [{
-                          "code": "ABT",
-                          "description": "Alpensia Biathlon Centre",
-                          "city": "PyeongChang",
-                          "meta": {
-                            "competition": true
-                          }
-                        },
-                        {
-                          "code": "ACC",
-                          "description": "Alpensia Cross-Ctry Ctr",
-                          "city": "PyeongChang",
-                          "meta": {
-                            "competition": true
-                          }
-                        }]
-                      }
+              total: 2,
+              item: [{
+                "code": "ABT",
+                "description": "Alpensia Biathlon Centre",
+                "city": "PyeongChang",
+                "meta": {
+                  "competition": true
+                }
+              },
+                {
+                  "code": "ACC",
+                  "description": "Alpensia Cross-Ctry Ctr",
+                  "city": "PyeongChang",
+                  "meta": {
+                    "competition": true
+                  }
+                }]
+            }
 
-  /games/{games}/venue/{venue}:
+  /games/{games}/venue/{code}:
     get:
       tags:
         - Venue
@@ -1238,10 +1209,8 @@ paths:
       security:
         - apikey: []
       parameters:
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: venue
       responses:
         200:
           description: Venue Detail
@@ -1270,8 +1239,7 @@ paths:
       security:
         - apikey: []
       parameters:
-        - $ref: '#/parameters/code'
-          name: games
+        - $ref: '#/parameters/games'
         - $ref: '#/parameters/limit'
       responses:
         200:
@@ -1280,57 +1248,8 @@ paths:
             type: object
           examples:
             application/json: {
-                        total: 2,
-                        item: [{
-                          "code": "7700095",
-                          "givenName": "Forough",
-                          "familyName": "ABBASI",
-                          "dob": "1993-09-15",
-                          "gender": {
-                            "code": "F",
-                            "description": "Female"
-                          },
-                          "organisation": {
-                            "code": "IRI",
-                            "description": "Islamic Rep. of Iran"
-                          }
-                        },
-                        {
-                          "code": "7701162",
-                          "givenName": "Agnese",
-                          "familyName": "ABOLTINA",
-                          "dob": "1996-02-07",
-                          "gender": {
-                            "code": "F",
-                            "description": "Female"
-                          },
-                          "organisation": {
-                            "code": "LAT",
-                            "description": "Latvia"
-                          }
-                        }]
-                      }
-
-  /games/{games}/participant/{participant}:
-    get:
-      tags:
-        - Participant
-      description: Returns the detail of a Participant for a games.
-      operationId: getParticipant
-      security:
-        - apikey: []
-      parameters:
-        - $ref: '#/parameters/code'
-          name: games
-        - $ref: '#/parameters/code'
-          name: participant
-      responses:
-        200:
-          description: Participant Detail
-          schema:
-            type: object
-          examples:
-            application/json: {
+              total: 2,
+              item: [{
                 "code": "7700095",
                 "givenName": "Forough",
                 "familyName": "ABBASI",
@@ -1343,7 +1262,54 @@ paths:
                   "code": "IRI",
                   "description": "Islamic Rep. of Iran"
                 }
+              },
+                {
+                  "code": "7701162",
+                  "givenName": "Agnese",
+                  "familyName": "ABOLTINA",
+                  "dob": "1996-02-07",
+                  "gender": {
+                    "code": "F",
+                    "description": "Female"
+                  },
+                  "organisation": {
+                    "code": "LAT",
+                    "description": "Latvia"
+                  }
+                }]
+            }
+
+  /games/{games}/participant/{code}:
+    get:
+      tags:
+        - Participant
+      description: Returns the detail of a Participant for a games.
+      operationId: getParticipant
+      security:
+        - apikey: []
+      parameters:
+        - $ref: '#/parameters/games'
+        - $ref: '#/parameters/code'
+      responses:
+        200:
+          description: Participant Detail
+          schema:
+            type: object
+          examples:
+            application/json: {
+              "code": "7700095",
+              "givenName": "Forough",
+              "familyName": "ABBASI",
+              "dob": "1993-09-15",
+              "gender": {
+                "code": "F",
+                "description": "Female"
+              },
+              "organisation": {
+                "code": "IRI",
+                "description": "Islamic Rep. of Iran"
               }
+            }
 
   #
   # Medal Table Collections
@@ -1358,8 +1324,7 @@ paths:
       security:
         - apikey: []
       parameters:
-        - $ref: '#/parameters/code'
-          name: games
+        - $ref: '#/parameters/games'
       responses:
         200:
           description: Medal Table
@@ -1367,146 +1332,153 @@ paths:
             type: object
           examples:
             application/json: {
-                              	"total": 220,
-                              	"item": [{
-                              			"organisation": {
-                              				"code": "USA",
-                              				"description": "United States"
-                              			},
-                              			"medals": {
-                              				"gold": 2,
-                              				"silver": 1,
-                              				"bronze": 0,
-                              				"total": 3
-                              			},
-                              			"rank": 1
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "AUT",
-                              				"description": "Austria"
-                              			},
-                              			"medals": {
-                              				"gold": 1,
-                              				"silver": 0,
-                              				"bronze": 1,
-                              				"total": 2
-                              			},
-                              			"rank": 2
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "FIN",
-                              				"description": "Finland"
-                              			},
-                              			"medals": {
-                              				"gold": 1,
-                              				"silver": 0,
-                              				"bronze": 1,
-                              				"total": 2
-                              			},
-                              			"rank": 2
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "KOR",
-                              				"description": "Republic of Korea"
-                              			},
-                              			"medals": {
-                              				"gold": 1,
-                              				"silver": 0,
-                              				"bronze": 1,
-                              				"total": 2
-                              			},
-                              			"rank": 2
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "NOR",
-                              				"description": "Norway"
-                              			},
-                              			"medals": {
-                              				"gold": 1,
-                              				"silver": 0,
-                              				"bronze": 0,
-                              				"total": 1
-                              			},
-                              			"rank": 5
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "POL",
-                              				"description": "Poland"
-                              			},
-                              			"medals": {
-                              				"gold": 1,
-                              				"silver": 0,
-                              				"bronze": 0,
-                              				"total": 1
-                              			},
-                              			"rank": 5
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "GER",
-                              				"description": "Germany"
-                              			},
-                              			"medals": {
-                              				"gold": 0,
-                              				"silver": 2,
-                              				"bronze": 0,
-                              				"total": 2
-                              			},
-                              			"rank": 7
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "CAN",
-                              				"description": "Canada"
-                              			},
-                              			"medals": {
-                              				"gold": 0,
-                              				"silver": 1,
-                              				"bronze": 1,
-                              				"total": 2
-                              			},
-                              			"rank": 8
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "ITA",
-                              				"description": "Italy"
-                              			},
-                              			"medals": {
-                              				"gold": 0,
-                              				"silver": 1,
-                              				"bronze": 0,
-                              				"total": 1
-                              			},
-                              			"rank": 9
-                              		},
-                              		{
-                              			"organisation": {
-                              				"code": "JPN",
-                              				"description": "Japan"
-                              			},
-                              			"medals": {
-                              				"gold": 0,
-                              				"silver": 1,
-                              				"bronze": 0,
-                              				"total": 1
-                              			},
-                              			"rank": 9
-                              		}
-                              	]
-                              }
+              "total": 220,
+              "item": [{
+                "organisation": {
+                  "code": "USA",
+                  "description": "United States"
+                },
+                "medals": {
+                  "gold": 2,
+                  "silver": 1,
+                  "bronze": 0,
+                  "total": 3
+                },
+                "rank": 1
+              },
+                {
+                  "organisation": {
+                    "code": "AUT",
+                    "description": "Austria"
+                  },
+                  "medals": {
+                    "gold": 1,
+                    "silver": 0,
+                    "bronze": 1,
+                    "total": 2
+                  },
+                  "rank": 2
+                },
+                {
+                  "organisation": {
+                    "code": "FIN",
+                    "description": "Finland"
+                  },
+                  "medals": {
+                    "gold": 1,
+                    "silver": 0,
+                    "bronze": 1,
+                    "total": 2
+                  },
+                  "rank": 2
+                },
+                {
+                  "organisation": {
+                    "code": "KOR",
+                    "description": "Republic of Korea"
+                  },
+                  "medals": {
+                    "gold": 1,
+                    "silver": 0,
+                    "bronze": 1,
+                    "total": 2
+                  },
+                  "rank": 2
+                },
+                {
+                  "organisation": {
+                    "code": "NOR",
+                    "description": "Norway"
+                  },
+                  "medals": {
+                    "gold": 1,
+                    "silver": 0,
+                    "bronze": 0,
+                    "total": 1
+                  },
+                  "rank": 5
+                },
+                {
+                  "organisation": {
+                    "code": "POL",
+                    "description": "Poland"
+                  },
+                  "medals": {
+                    "gold": 1,
+                    "silver": 0,
+                    "bronze": 0,
+                    "total": 1
+                  },
+                  "rank": 5
+                },
+                {
+                  "organisation": {
+                    "code": "GER",
+                    "description": "Germany"
+                  },
+                  "medals": {
+                    "gold": 0,
+                    "silver": 2,
+                    "bronze": 0,
+                    "total": 2
+                  },
+                  "rank": 7
+                },
+                {
+                  "organisation": {
+                    "code": "CAN",
+                    "description": "Canada"
+                  },
+                  "medals": {
+                    "gold": 0,
+                    "silver": 1,
+                    "bronze": 1,
+                    "total": 2
+                  },
+                  "rank": 8
+                },
+                {
+                  "organisation": {
+                    "code": "ITA",
+                    "description": "Italy"
+                  },
+                  "medals": {
+                    "gold": 0,
+                    "silver": 1,
+                    "bronze": 0,
+                    "total": 1
+                  },
+                  "rank": 9
+                },
+                {
+                  "organisation": {
+                    "code": "JPN",
+                    "description": "Japan"
+                  },
+                  "medals": {
+                    "gold": 0,
+                    "silver": 1,
+                    "bronze": 0,
+                    "total": 1
+                  },
+                  "rank": 9
+                }
+              ]
+            }
 
 parameters:
+
+  games:
+    name: games
+    in: path
+    description: Code of current games
+    required: true
+    type: string
 
   code:
     name: code
     in: path
-    description: Code of query entity
+    description: Code of queried resource entity
     required: true
     type: string
 
@@ -1514,6 +1486,20 @@ parameters:
     name: status
     in: query
     description: The status of a unit
+    required: false
+    type: string
+
+  discipline:
+    name: discipline
+    in: query
+    description: The discipline query parameter
+    required: false
+    type: string
+
+  organisation:
+    name: organisation
+    in: query
+    description: The organisation query parameter
     required: false
     type: string
 
@@ -1543,8 +1529,30 @@ parameters:
       Limit the the number of items to be returned per page.
       The 'limit' parameter is typically used with the 'offset' parameter to facilitate pagination.
 
-  baseDate:
-    name: baseDate
+  start:
+    name: start
+    in: query
+    required: false
+    type: string
+    format: 'date-time'
+    x-example: 2014-04-17
+    description: >-
+      Limit the entities to ones within the specified range.
+      The 'end' parameter is typically used in combination with the 'start' param to form a date range.
+
+      Formats Supported:
+        - 'YYYY-MM-DD'
+        - 'YYYY-MM-DD[T]HH:mm:ssZ'
+        - 'YYYY-MM-DD[T]HH:mm:ss.SSSZ'
+        - 'YYYY-MM-DD[T]HH:mm:ss'
+        - 'YYYY-MM-DD[T]HH:mm'
+        - 'now'
+        - 'today'
+        - 'tomorrow'
+        - 'now.plus.n'
+        - 'now.minus.n'
+  end:
+    name: end
     in: query
     required: false
     type: string
