@@ -34,8 +34,6 @@ paths:
       operationId: listGames
       security:
         - apikey: []
-      parameters:
-        - $ref: '#/parameters/limit'
       responses:
         200:
           description: Games Collection
@@ -97,7 +95,6 @@ paths:
         - apikey: []
       parameters:
         - $ref: '#/parameters/games'
-        - $ref: '#/parameters/limit'
       responses:
         200:
           description: Discipline Collection
@@ -226,7 +223,6 @@ paths:
         - $ref: '#/parameters/end'
         - $ref: '#/parameters/discipline'
         - $ref: '#/parameters/organisation'
-        - $ref: '#/parameters/limit'
       responses:
         200:
           description: Unit Collection, we need to add schedule helpers to look up by single day. Start list for head to head events needs adding.
@@ -1173,7 +1169,6 @@ paths:
         - apikey: []
       parameters:
         - $ref: '#/parameters/games'
-        - $ref: '#/parameters/limit'
       responses:
         200:
           description: Venue Collection
@@ -1240,7 +1235,6 @@ paths:
         - apikey: []
       parameters:
         - $ref: '#/parameters/games'
-        - $ref: '#/parameters/limit'
       responses:
         200:
           description: Participant Collection
@@ -1517,18 +1511,6 @@ parameters:
     required: false
     type: string
 
-  limit:
-    name: limit
-    in: query
-    required: false
-    type: integer
-    format: int32
-    default: 100
-    x-example: 5
-    description: >-
-      Limit the the number of items to be returned per page.
-      The 'limit' parameter is typically used with the 'offset' parameter to facilitate pagination.
-
   start:
     name: start
     in: query
@@ -1538,7 +1520,7 @@ parameters:
     x-example: 2014-04-17
     description: >-
       Limit the entities to ones within the specified range.
-      The 'end' parameter is typically used in combination with the 'start' param to form a date range.
+      The 'start' parameter is typically used in combination with the 'end' param to form a date range.
 
       Formats Supported:
         - 'YYYY-MM-DD'
