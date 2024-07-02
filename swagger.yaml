@@ -976,11 +976,11 @@ paths:
               "link": [
                 {
                   "rel": "event",
-                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/event/ALPMSG----------------"
                 },
                 {
                   "rel": "self",
-                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/event/ALPMSG----------------/result"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/event/ALPMSG----------------/result"
                 }
               ]
             }
@@ -1146,11 +1146,11 @@ paths:
               "link": [
                 {
                   "rel": "self",
-                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------/result"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------/result"
                 },
                 {
                   "rel": "phase",
-                  "href": "https://olympics.api.pressassociation.io/games/OWG2018/phase/SBDMBA--------------------"
+                  "href": "https://olympics.api.pamedia.io/v3/games/OWG2018/phase/SBDMBA--------------------"
                 }
               ]
             }
@@ -1304,6 +1304,146 @@ paths:
                 "description": "Islamic Rep. of Iran"
               }
             }
+
+  #
+  # Horse Resource
+  #
+  /games/{games}/horse:
+    get:
+      tags:
+        - Horse
+      description: Returns a list of horses for a games.
+      operationId: listHorse
+      security:
+        - apikey: []
+      parameters:
+        - $ref: '#/parameters/games'
+      responses:
+        200:
+          description: Horse Collection
+          schema:
+            type: object
+          examples:
+            application/json: {
+              "total": 2,
+              "item": [
+                {
+                  "code": "H000009",
+                  "name": "BART L JRA",
+                  "passport": "103SG06",
+                  "breed": {
+                    "code": "KWPN",
+                    "description": "Koninklijk Warmbloed Paardenstamboek Nederland"
+                  },
+                  "colour": {
+                    "code": "BA",
+                    "description": "Bay"
+                  },
+                  "gender": {
+                    "code": "GD",
+                    "description": "Gelding"
+                  },
+                  "groom": "VAN OMMESLAEGHE CHARLOTTE",
+                  "birthCountry": {
+                    "code": "NED",
+                    "description": "Netherlands"
+                  },
+                  "birthYear": 2006,
+                  "sire": "UNITED",
+                  "owners": [ ],
+                  "link": [
+                    {
+                      "rel": "self",
+                      "href": "https://olympics.api.pamedia.io/v3/games/OG2020/horse/H000009"
+                    }
+                  ]
+                },
+                {
+                  "code": "H000011",
+                  "name": "BERNADETTE UTOPIA",
+                  "passport": "104WE70",
+                  "breed": {
+                    "code": "KWPN",
+                    "description": "Koninklijk Warmbloed Paardenstamboek Nederland"
+                  },
+                  "colour": {
+                    "code": "BA",
+                    "description": "Bay"
+                  },
+                  "gender": {
+                    "code": "MA",
+                    "description": "Mare"
+                  },
+                  "groom": "POTTS JACQUELINE",
+                  "birthCountry": {
+                    "code": "NED",
+                    "description": "Netherlands"
+                  },
+                  "birthYear": 2006,
+                  "sire": "COLANDRO",
+                  "owners": [
+                    "MASARU OTSUJI",
+                    "SHINJI YAMAMORI"
+                  ],
+                  "link": [
+                    {
+                      "rel": "self",
+                      "href": "https://olympics.api.pamedia.io/v3/games/OG2020/horse/H000011"
+                    }
+                  ]
+                }
+              ]
+            }
+
+  /games/{games}/horse/{code}:
+    get:
+      tags:
+        - Horse
+      description: Returns the detail of a Horse for a games.
+      operationId: getHorse
+      security:
+        - apikey: []
+      parameters:
+        - $ref: '#/parameters/games'
+        - $ref: '#/parameters/code'
+      responses:
+        200:
+          description: Horse Detail
+          schema:
+            type: object
+          examples:
+            application/json: {
+              "code": "H000009",
+              "name": "BART L JRA",
+              "passport": "103SG06",
+              "breed": {
+                "code": "KWPN",
+                "description": "Koninklijk Warmbloed Paardenstamboek Nederland"
+              },
+              "colour": {
+                "code": "BA",
+                "description": "Bay"
+              },
+              "gender": {
+                "code": "GD",
+                "description": "Gelding"
+              },
+              "groom": "VAN OMMESLAEGHE CHARLOTTE",
+              "birthCountry": {
+                "code": "NED",
+                "description": "Netherlands"
+              },
+              "birthYear": 2006,
+              "sire": "UNITED",
+              "owners": [ ],
+              "link": [
+                {
+                  "rel": "self",
+                  "href": "https://olympics.api.pamedia.io/v3/games/OG2020/horse/H000009"
+                }
+              ]
+            }
+
 
   #
   # Medal Table Collections
