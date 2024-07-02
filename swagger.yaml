@@ -1235,6 +1235,7 @@ paths:
         - apikey: []
       parameters:
         - $ref: '#/parameters/games'
+        - $ref: '#/parameters/athlete'
       responses:
         200:
           description: Participant Collection
@@ -1695,3 +1696,9 @@ parameters:
         - 'tomorrow'
         - 'now.plus.n'
         - 'now.minus.n'
+  athlete:
+    name: athlete
+    in: query
+    required: false
+    type: boolean
+    description: The athlete query parameter, when true will return only athletes, when false will return all participants
