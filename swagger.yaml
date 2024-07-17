@@ -1236,6 +1236,8 @@ paths:
       parameters:
         - $ref: '#/parameters/games'
         - $ref: '#/parameters/athlete'
+        - $ref: '#/parameters/organisation-required'
+        - $ref: '#/parameters/sorted'
       responses:
         200:
           description: Participant Collection
@@ -1319,6 +1321,8 @@ paths:
         - apikey: []
       parameters:
         - $ref: '#/parameters/games'
+        - $ref: '#/parameters/organisation-required'
+        - $ref: '#/parameters/sorted'
       responses:
         200:
           description: Horse Collection
@@ -1638,6 +1642,13 @@ parameters:
     required: false
     type: string
 
+  organisation-required:
+    name: organisation
+    in: query
+    description: The organisation query parameter
+    required: true
+    type: string
+
   type:
     name: type
     in: query
@@ -1702,3 +1713,10 @@ parameters:
     required: false
     type: boolean
     description: The athlete query parameter, when true will return only athletes, when false will return all participants
+  sorted:
+    name: sorted
+    in: query
+    required: false
+    type: boolean
+    description: The sorted query parameter, when true will return sorted athletes, when false will return unsorted.
+
